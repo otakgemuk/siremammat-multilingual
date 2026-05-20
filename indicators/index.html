@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indicators | SireMammat</title>
+<meta name="description" content="Al Brooks price action, trading strategies, playbooks, and case studies. Trade the market, not the noise.">
+<meta name="author" content="Sire Mammat">
+<meta property="og:title" content="Indicators | SireMammat">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@SireMammat">
+<meta name="theme-color" content="#0B0F19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.ind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.ind-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; transition: border-color 0.2s; }
+.ind-card:hover { border-color: var(--border2); }
+.ind-icon { font-size: 24px; margin-bottom: 12px; }
+.ind-category { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.ind-title { font-size: 18px; font-weight: 800; margin-bottom: 4px; font-family: var(--mono); }
+.ind-subtitle { font-size: 13px; color: var(--text2); margin-bottom: 16px; }
+.ind-features { list-style: none; margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+.ind-features li { font-size: 12px; color: var(--text3); padding-left: 14px; position: relative; }
+.ind-features li::before { content: '—'; position: absolute; left: 0; }
+.ind-stats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.ind-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; }
+.ind-stat .s-val { font-size: 14px; font-weight: 700; font-family: var(--mono); }
+.ind-stat .s-lbl { font-size: 10px; color: var(--text3); }
+.ind-links { display: flex; gap: 10px; margin-top: auto; }
+.ind-link { font-size: 12px; color: var(--accent); padding: 6px 12px; border: 1px solid var(--border); border-radius: 6px; transition: all 0.15s; }
+.ind-link:hover { border-color: var(--accent); background: rgba(59,122,255,0.08); }
+@media(max-width:900px){ .ind-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:600px){ .ind-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker-label">DELAYED</div>
+  <div class="ticker-scroll"></div>
+</div>
+
+<nav class="main-nav">
+  <a href="../" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div><div class="nav-logo-text">SireMammat</div><div class="nav-logo-sub">Education</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../">Hub</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../indicators/" class="active">Indicators</a></li>
+    <li><a href="../tools/">Tools</a></li>
+    <li><a href="../analysis/">Analysis</a></li>
+    <li><a href="../calculator/">Calculator</a></li>
+    <li><a href="../#contact">Contact</a></li>
+    <li><a href="https://wise.com/pay/me/muhammads5009?utm_source=request_flow" target="_blank" class="nav-cta">☕ Buy Me a Coffee</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" aria-label="Menu">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+
+<div class="page-header">
+  <div class="eyebrow">Pine Script v5</div>
+  <h1>All Indicators</h1>
+  <p>Custom indicators built on Al Brooks price action methodology. All coded in Pine Script v5.</p>
+</div>
+<div class="content-wrap">
+  <div class="ind-grid">
+<div class="ind-card">
+  <div class="ind-icon">▶</div>
+  <div class="ind-category">Trend Following</div>
+  <div class="ind-title">Sire-PYE</div>
+  <div class="ind-subtitle">A trend-following scalp system for Index Futures</div>
+  <ul class="ind-features"><li>30-min EMA anchor</li><li>Strict daily kill switch</li><li>Chop filter</li><li>MNQ/MES/ES/NQ</li></ul>
+  <div class="ind-stats"><div class="ind-stat"><div class="s-val">+34.19%</div><div class="s-lbl">net Profit</div></div><div class="ind-stat"><div class="s-val">$4,528</div><div class="s-lbl">max DD</div></div><div class="ind-stat"><div class="s-val">1.83</div><div class="s-lbl">profit Factor</div></div></div>
+  <div class="ind-links">
+    <a href="https://siremammat.vercel.app/indicators/sire-pye" target="_blank" class="ind-link">Full Documentation →</a>
+    <a href="https://tradingview.com/@SireMammat" target="_blank" class="ind-link">TradingView</a>
+  </div>
+</div>
+<div class="ind-card">
+  <div class="ind-icon">🟢</div>
+  <div class="ind-category">Momentum</div>
+  <div class="ind-title">Sire-GreenLight</div>
+  <div class="ind-subtitle">Core trend-continuation momentum indicator with a 4-filter system</div>
+  <ul class="ind-features"><li>4 filter layers</li><li>20 EMA bias</li><li>3 signal types</li><li>L8/B8 PRO entries</li></ul>
+  <div class="ind-stats"><div class="ind-stat"><div class="s-val">3 Types</div><div class="s-lbl">signals</div></div><div class="ind-stat"><div class="s-val">4 Layers</div><div class="s-lbl">filters</div></div><div class="ind-stat"><div class="s-val">20</div><div class="s-lbl">ema</div></div></div>
+  <div class="ind-links">
+    <a href="https://siremammat.vercel.app/indicators/SireGLCore" target="_blank" class="ind-link">Full Documentation →</a>
+    <a href="https://tradingview.com/@SireMammat" target="_blank" class="ind-link">TradingView</a>
+  </div>
+</div>
+<div class="ind-card">
+  <div class="ind-icon">🎣</div>
+  <div class="ind-category">Stop-Run Detection</div>
+  <div class="ind-title">Sire-SchoolFishing</div>
+  <div class="ind-subtitle">School Run + Fishing Technique with 9/20 EMA foundation</div>
+  <ul class="ind-features"><li>School Run pattern</li><li>Fishing technique</li><li>9/20 EMA pair</li><li>RTH session</li></ul>
+  <div class="ind-stats"><div class="ind-stat"><div class="s-val">3</div><div class="s-lbl">modules</div></div><div class="ind-stat"><div class="s-val">9/20</div><div class="s-lbl">ema</div></div><div class="ind-stat"><div class="s-val">RTH</div><div class="s-lbl">framework</div></div></div>
+  <div class="ind-links">
+    <a href="https://siremammat.vercel.app/indicators/Sire-SF" target="_blank" class="ind-link">Full Documentation →</a>
+    <a href="https://tradingview.com/@SireMammat" target="_blank" class="ind-link">TradingView</a>
+  </div>
+</div>
+<div class="ind-card">
+  <div class="ind-icon">🔒</div>
+  <div class="ind-category">Exhaustion & Reversal</div>
+  <div class="ind-title">TD Sequential</div>
+  <div class="ind-subtitle">Tom DeMark momentum exhaustion system with setup 9 and countdown 13</div>
+  <ul class="ind-features"><li>Setup 9</li><li>Countdown 13</li><li>Reversal detection</li><li>Two phases</li></ul>
+  <div class="ind-stats"><div class="ind-stat"><div class="s-val">9</div><div class="s-lbl">setup</div></div><div class="ind-stat"><div class="s-val">13</div><div class="s-lbl">countdown</div></div><div class="ind-stat"><div class="s-val">Private</div><div class="s-lbl">status</div></div></div>
+  <div class="ind-links">
+    <a href="https://siremammat.vercel.app/indicators/TD9" target="_blank" class="ind-link">Full Documentation →</a>
+    <a href="https://tradingview.com/@SireMammat" target="_blank" class="ind-link">TradingView</a>
+  </div>
+</div>
+<div class="ind-card">
+  <div class="ind-icon">📐</div>
+  <div class="ind-category">Trend & Momentum</div>
+  <div class="ind-title">Raschke 12 Rules</div>
+  <div class="ind-subtitle">Linda Raschke 12 Rules of Trading coded into Pine Script v5</div>
+  <ul class="ind-features"><li>20 EMA anchor</li><li>Dashboard tracking</li><li>3 panel display</li><li>Last Hour Truth</li></ul>
+  <div class="ind-stats"><div class="ind-stat"><div class="s-val">12</div><div class="s-lbl">rules</div></div><div class="ind-stat"><div class="s-val">20</div><div class="s-lbl">ema</div></div><div class="ind-stat"><div class="s-val">3</div><div class="s-lbl">panels</div></div></div>
+  <div class="ind-links">
+    <a href="https://siremammat.vercel.app/indicators/raschkerule" target="_blank" class="ind-link">Full Documentation →</a>
+    <a href="https://tradingview.com/@SireMammat" target="_blank" class="ind-link">TradingView</a>
+  </div>
+</div>
+<div class="ind-card">
+  <div class="ind-icon">▲▼</div>
+  <div class="ind-category">Mean Reversion & Pullback</div>
+  <div class="ind-title">M2B / M2S Setup</div>
+  <div class="ind-subtitle">Two-legged pullback to 20 EMA with touch-and-reject confirmation</div>
+  <ul class="ind-features"><li>20 EMA</li><li>M2B long setup</li><li>M2S short setup</li><li>Clean signals</li></ul>
+  <div class="ind-stats"><div class="ind-stat"><div class="s-val">2</div><div class="s-lbl">signals</div></div><div class="ind-stat"><div class="s-val">20</div><div class="s-lbl">ema</div></div><div class="ind-stat"><div class="s-val">2</div><div class="s-lbl">min Legs</div></div></div>
+  <div class="ind-links">
+    <a href="https://siremammat.vercel.app/indicators/M2" target="_blank" class="ind-link">Full Documentation →</a>
+    <a href="https://tradingview.com/@SireMammat" target="_blank" class="ind-link">TradingView</a>
+  </div>
+</div></div>
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;margin-top:32px;">
+    <div class="section-eyebrow" style="margin-bottom:8px;">About These Tools</div>
+    <p style="font-size:14px;color:var(--text2);line-height:1.7;">All indicators are built on Al Brooks price action methodology and coded in Pine Script v5. All scripts will be posted on my GitHub — reach out via <a href="../#contact" style="color:var(--accent);">Contact</a> for access.</p>
+    <p style="font-size:14px;color:var(--text2);line-height:1.7;margin-top:12px;">No licensing fees. No locked features. Just tools built to help you trade consistently. Study the code, modify it, use it in your trading. That's the point.</p>
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white;">S</div>
+        <div style="font-weight:700;font-size:15px;">SireMammat</div>
+      </div>
+      <p>Free futures trading education built on Al Brooks price action methodology.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Education</h4>
+      <ul>
+        <li><a href="../learn/">Learn Price Action</a></li>
+<li><a href="../strategies/">Strategies</a></li>
+<li><a href="../playbooks/">Playbooks</a></li>
+<li><a href="../trading-plan/">Trading Plan</a></li>
+<li><a href="../tools/">Tools & Brokers</a></li>
+<li><a href="../calculator/">Position Calculator</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://twitter.com/SireMammat" target="_blank">X / Twitter</a></li>
+        <li><a href="https://youtube.com/@SireMammat" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Disclaimer</h4>
+      <p style="font-size:12px;color:var(--text3);line-height:1.6;">Trading involves substantial risk of loss. Past performance is not indicative of future results. All content is educational only.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sire Mammat · All rights reserved</span>
+    <span>Al Brooks Methodology · Free Education</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

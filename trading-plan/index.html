@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Plan | SireMammat</title>
+<meta name="description" content="Al Brooks price action, trading strategies, playbooks, and case studies. Trade the market, not the noise.">
+<meta name="author" content="Sire Mammat">
+<meta property="og:title" content="Trading Plan | SireMammat">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@SireMammat">
+<meta name="theme-color" content="#0B0F19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.plan-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.plan-section { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.plan-section-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; cursor: pointer; gap: 12px; }
+.plan-section-header:hover { background: var(--bg3); }
+.plan-section-header.open { background: var(--bg3); border-bottom: 1px solid var(--border); }
+.plan-emoji { font-size: 20px; flex-shrink: 0; }
+.plan-section-title { font-size: 15px; font-weight: 700; flex: 1; }
+.plan-section-sub { font-size: 12px; color: var(--text3); }
+.plan-body { display: none; padding: 24px; }
+.plan-body.open { display: block; }
+.plan-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.plan-col h4 { font-size: 13px; font-weight: 700; margin-bottom: 12px; }
+.plan-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.plan-col ul li { font-size: 13px; color: var(--text2); padding-left: 16px; position: relative; line-height: 1.6; }
+.plan-col ul li::before { content: '•'; position: absolute; left: 0; color: var(--text3); }
+.phase-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.phase-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.phase-card .ph-num { font-size: 11px; color: var(--text3); font-weight: 700; margin-bottom: 6px; }
+.phase-card .ph-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.phase-card ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.phase-card ul li { font-size: 12px; color: var(--text2); padding-left: 14px; position: relative; }
+.phase-card ul li::before { content: '•'; position: absolute; left: 0; color: var(--text3); }
+.signal-light { display: flex; flex-direction: column; gap: 10px; }
+.signal-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; border-radius: 8px; font-size: 13px; line-height: 1.6; }
+.signal-green { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); }
+.signal-amber { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); }
+.signal-red { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); }
+@media(max-width:800px){ .plan-two-col{grid-template-columns:1fr;} .phase-cards{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:500px){ .phase-cards{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker-label">DELAYED</div>
+  <div class="ticker-scroll"></div>
+</div>
+
+<nav class="main-nav">
+  <a href="../" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div><div class="nav-logo-text">SireMammat</div><div class="nav-logo-sub">Education</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../" class="active">Hub</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../indicators/">Indicators</a></li>
+    <li><a href="../tools/">Tools</a></li>
+    <li><a href="../analysis/">Analysis</a></li>
+    <li><a href="../calculator/">Calculator</a></li>
+    <li><a href="../#contact">Contact</a></li>
+    <li><a href="https://wise.com/pay/me/muhammads5009?utm_source=request_flow" target="_blank" class="nav-cta">☕ Buy Me a Coffee</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" aria-label="Menu">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+
+<div class="page-header">
+  <div class="eyebrow">Execution</div>
+  <h1>Trading Plan</h1>
+  <p>The complete 20-point futures day trading plan with market filters, entry rules, and performance tracking.</p>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin:16px 0 0;">
+  <div class="stat-badge"><div class="val">20 pts</div><div class="lbl">Per Contract</div></div>
+  <div class="stat-badge"><div class="val">$1,000</div><div class="lbl">ES Daily Target</div></div>
+  <div class="stat-badge"><div class="val">2–4</div><div class="lbl">Trades/Day</div></div>
+  <div class="stat-badge"><div class="val">10 pts</div><div class="lbl">Max Loss/Trade</div></div>
+</div>
+</div>
+<div class="content-wrap">
+  <div class="plan-grid">
+    
+<div class="plan-section">
+  <div class="plan-section-header" onclick="togglePlan(this)">
+    <span class="plan-emoji">🌡️</span>
+    <div style="flex:1;">
+      <div class="plan-section-title">Market Condition Filters</div>
+      <div class="plan-section-sub">Read the environment before you trade</div>
+    </div>
+    <svg class="accordion-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="plan-body">
+<div class="plan-two-col">
+  <div class="plan-col">
+    <h4 style="color:var(--green);">Trend Day Signals ✅</h4>
+    <ul><li>Gap open > 10 pts and holds direction in first 15 min</li><li>Price stays on one side of VWAP for > 30 min</li><li>VIX > 18 with clear directional momentum</li><li>High-impact news catalyst (FOMC, CPI, NFP) confirms direction</li><li>Globex range > 30 pts overnight</li></ul>
+  </div>
+  <div class="plan-col">
+    <h4 style="color:var(--text2);">Range Day Signals ↔️</h4>
+    <ul><li>Flat open — price within 5 pts of prior close</li><li>Price oscillates back and forth through VWAP repeatedly</li><li>VIX < 14 — low volatility, compressed ranges</li><li>No major catalysts on the economic calendar</li><li>Globex range < 15 pts — quiet overnight session</li></ul>
+  </div>
+</div>
+<div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:8px;padding:14px 18px;margin-top:16px;">
+  <strong style="font-size:12px;color:var(--red);">⚠️ No-Trade Conditions</strong>
+  <ul style="list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px;">
+    <li style="font-size:13px;color:var(--text2);">• Avoid trading 30 min before/after FOMC, CPI, or NFP releases</li>
+    <li style="font-size:13px;color:var(--text2);">• If the opening range is wider than 40 pts, stand aside until a clear structure forms</li>
+    <li style="font-size:13px;color:var(--text2);">• When VIX spikes above 35, reduce size by 50% or sit out entirely</li>
+  </ul>
+</div></div>
+</div>
+<div class="plan-section">
+  <div class="plan-section-header" onclick="togglePlan(this)">
+    <span class="plan-emoji">📋</span>
+    <div style="flex:1;">
+      <div class="plan-section-title">Pre-Market Prep</div>
+      <div class="plan-section-sub">8:30 – 9:30 AM EST</div>
+    </div>
+    <svg class="accordion-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="plan-body">
+<div class="plan-two-col">
+  <div class="plan-col">
+    <h4>Key Levels to Mark</h4>
+    <ul><li>Yesterday's High & Low</li><li>Overnight Globex High & Low</li><li>Prior Day VWAP</li><li>POC · HVN · LVN from Volume Profile</li><li>Nearest support & resistance levels</li></ul>
+  </div>
+  <div class="plan-col">
+    <h4>Bias Assessment</h4>
+    <ul><li>Check economic calendar for catalysts</li><li>Note pre-market futures direction</li><li>Decide: Trend day or Range day bias</li><li>Mark your 20-pt target on the chart</li><li>Note daily loss limit — set kill switch</li></ul>
+  </div>
+</div></div>
+</div>
+<div class="plan-section">
+  <div class="plan-section-header" onclick="togglePlan(this)">
+    <span class="plan-emoji">🎯</span>
+    <div style="flex:1;">
+      <div class="plan-section-title">Entry & Exit Criteria</div>
+      <div class="plan-section-sub">Specific signals — not feelings</div>
+    </div>
+    <svg class="accordion-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="plan-body">
+<div class="plan-two-col">
+  <div class="plan-col">
+    <h4 style="color:var(--green);">Long Entry Rules</h4>
+    <ul><li>VWAP Reclaim: Price dips below VWAP, then a 5-min candle closes back above it with increasing volume</li><li>HVN Bounce: Price tests a High Volume Node from below, shows a rejection wick, then closes above the level</li><li>Breakout Confirm: Price breaks above prior session high with a 5-min close above + volume surge</li><li>Opening Drive: First 5-min candle closes bullish, retest of its low holds — enter on break of first candle high</li></ul>
+  </div>
+  <div class="plan-col">
+    <h4 style="color:var(--red);">Short Entry Rules</h4>
+    <ul><li>VWAP Rejection: Price rallies to VWAP from below, fails to close above it, then closes back under with volume</li><li>LVN Fade: Price pushes into a Low Volume Node — thin area acts as resistance. Short the rejection wick close</li><li>Failed Breakout: Price breaks a key level but fails to hold — closes back inside the range within 1–2 candles</li><li>Opening Drive: First 5-min candle closes bearish, rally back to its high fails — short the break of first candle low</li></ul>
+  </div>
+</div></div>
+</div>
+<div class="plan-section">
+  <div class="plan-section-header" onclick="togglePlan(this)">
+    <span class="plan-emoji">🛡️</span>
+    <div style="flex:1;">
+      <div class="plan-section-title">Stop Loss Placement</div>
+      <div class="plan-section-sub">Structure-based, not arbitrary</div>
+    </div>
+    <svg class="accordion-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="plan-body">
+<ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">
+  <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>VWAP Trade: Stop goes 2–3 pts beyond VWAP on the opposite side of your entry. Never wider.</li>
+  <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>Support/Resistance: Stop goes 1–2 pts beyond the level you traded off. If level breaks, thesis is invalid.</li>
+  <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>Breakeven Rule: Once the trade is up 5 pts, move stop to breakeven. Lock in safety.</li>
+  <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>Trailing Stop: After 8 pts gained, trail stop 3–4 pts behind the last swing low (long) or high (short).</li>
+</ul>
+<div style="overflow-x:auto;">
+<table class="data-table">
+  <thead><tr><th>Setup Type</th><th>Max Stop</th><th>$ Risk (1 ES)</th></tr></thead>
+  <tbody>
+    <tr><td>VWAP Reclaim/Rejection</td><td>3 pts</td><td>$150</td></tr>
+    <tr><td>Support/Resistance Level</td><td>4 pts</td><td>$200</td></tr>
+    <tr><td>Opening Drive</td><td>5 pts</td><td>$250</td></tr>
+    <tr><td>Range Fade</td><td>5 pts</td><td>$250</td></tr>
+    <tr><td>Breakout Play</td><td>6 pts</td><td>$300</td></tr>
+    <tr><td style="font-weight:700;">Hard Max (any trade)</td><td style="font-weight:700;color:var(--red);">10 pts</td><td style="font-weight:700;color:var(--red);">$500</td></tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="plan-section">
+  <div class="plan-section-header" onclick="togglePlan(this)">
+    <span class="plan-emoji">⚖️</span>
+    <div style="flex:1;">
+      <div class="plan-section-title">Position Sizing Formula</div>
+      <div class="plan-section-sub">Risk 1–2% of account per trade</div>
+    </div>
+    <svg class="accordion-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="plan-body">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;">
+  <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px;"><div style="font-size:12px;color:var(--text3);margin-bottom:8px;">$10k Account</div><ul style="list-style:none;display:flex;flex-direction:column;gap:4px;"><li style="font-size:13px;color:var(--text2);">1 MES per trade</li><li style="font-size:13px;color:var(--text2);">Risk $100–$200/trade</li><li style="font-size:13px;color:var(--text2);">20 pts = $100</li></ul></div>
+  <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px;"><div style="font-size:12px;color:var(--text3);margin-bottom:8px;">$25k Account</div><ul style="list-style:none;display:flex;flex-direction:column;gap:4px;"><li style="font-size:13px;color:var(--text2);">1 ES per trade</li><li style="font-size:13px;color:var(--text2);">Risk $250–$500/trade</li><li style="font-size:13px;color:var(--text2);">20 pts = $1,000</li></ul></div>
+  <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px;"><div style="font-size:12px;color:var(--text3);margin-bottom:8px;">$50k Account</div><ul style="list-style:none;display:flex;flex-direction:column;gap:4px;"><li style="font-size:13px;color:var(--text2);">2 ES per trade</li><li style="font-size:13px;color:var(--text2);">Risk $500–$1,000/trade</li><li style="font-size:13px;color:var(--text2);">20 pts = $2,000</li></ul></div>
+  <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px;"><div style="font-size:12px;color:var(--text3);margin-bottom:8px;">$100k Account</div><ul style="list-style:none;display:flex;flex-direction:column;gap:4px;"><li style="font-size:13px;color:var(--text2);">3–4 ES per trade</li><li style="font-size:13px;color:var(--text2);">Risk $1k–$2k/trade</li><li style="font-size:13px;color:var(--text2);">20 pts = $3–4k</li></ul></div>
+</div></div>
+</div>
+<div class="plan-section">
+  <div class="plan-section-header" onclick="togglePlan(this)">
+    <span class="plan-emoji">🕐</span>
+    <div style="flex:1;">
+      <div class="plan-section-title">Trading Sessions Timeline</div>
+      <div class="plan-section-sub">Four execution windows</div>
+    </div>
+    <svg class="accordion-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="plan-body">
+<div style="display:flex;flex-direction:column;gap:10px;">
+  <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="font-size:13px;font-weight:700;">8:30–9:30 AM — Pre-Market Prep</span><span class="tag tag-gray">No Trading</span></div>
+    <p style="font-size:13px;color:var(--text2);">Mark key levels, assess bias, check economic calendar, set daily loss limit. Know your plan before the bell rings.</p>
+  </div>
+  <div style="background:var(--bg);border:1px solid rgba(59,122,255,0.3);border-radius:10px;padding:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="font-size:13px;font-weight:700;">9:30–10:30 AM — Opening Drive</span><span class="tag tag-green">Target: 5–8 pts</span></div>
+    <p style="font-size:13px;color:var(--text2);">Highest volatility window — breakout or fade the opening range. Use momentum entries only — no counter-trend during first 15 min. Max 2 trades here.</p>
+  </div>
+  <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="font-size:13px;font-weight:700;">10:30–11:00 AM — Cooling Period</span><span class="tag tag-amber">Stand Aside</span></div>
+    <p style="font-size:13px;color:var(--text2);">Market digests the opening move — high chop risk. Review trades taken, adjust plan for midday.</p>
+  </div>
+  <div style="background:var(--bg);border:1px solid rgba(59,122,255,0.2);border-radius:10px;padding:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="font-size:13px;font-weight:700;">11:00 AM–1:30 PM — Midday Rotation</span><span class="tag tag-blue">Target: 5–7 pts</span></div>
+    <p style="font-size:13px;color:var(--text2);">Play VWAP bounces and volume profile rotations. Smaller size, tighter stops (3–5 pts). Take partial exits quickly — midday moves are shorter.</p>
+  </div>
+  <div style="background:var(--bg);border:1px solid rgba(59,122,255,0.3);border-radius:10px;padding:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="font-size:13px;font-weight:700;">2:00–3:30 PM — Afternoon Push</span><span class="tag tag-green">Target: 6–8 pts</span></div>
+    <p style="font-size:13px;color:var(--text2);">Align with trend continuation or reversal into close. Final push to reach 20-pt target.</p>
+  </div>
+  <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="font-size:13px;font-weight:700;">3:30–4:00 PM — End-of-Day Review</span><span class="tag tag-red">No New Trades</span></div>
+    <p style="font-size:13px;color:var(--text2);">Close all positions. Log trades, calculate total points harvested.</p>
+  </div>
+</div></div>
+</div>
+<div class="plan-section">
+  <div class="plan-section-header" onclick="togglePlan(this)">
+    <span class="plan-emoji">🧠</span>
+    <div style="flex:1;">
+      <div class="plan-section-title">Psychological & Discipline Rules</div>
+      <div class="plan-section-sub">The edge is in your behaviour</div>
+    </div>
+    <svg class="accordion-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="plan-body">
+<div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:18px;margin-bottom:16px;">
+  <strong style="font-size:13px;color:var(--red);">The Kill Switch</strong>
+  <ul style="list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:8px;">
+    <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>Daily Loss Limit: Stop trading if down 15 pts on the day. No matter what you think you see.</li>
+    <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>Consecutive Losses: After 2 losing trades back-to-back, take a 60-min break before any new trade.</li>
+    <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>Weekly Cap: If down 40 pts in a week, stop for the rest of that week. Protect your capital base.</li>
+  </ul>
+</div>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+  <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>No revenge trading: Every trade stands alone. A loss is information — not a score to settle.</li>
+  <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>Process over outcome: A losing trade executed correctly is a good trade.</li>
+  <li style="font-size:13px;color:var(--text2);padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--text3);">•</span>Target is a ceiling: Once you hit 20 pts, the trading day is over. Walk away — greed gives it back.</li>
+</ul></div>
+</div>
+<div class="plan-section">
+  <div class="plan-section-header" onclick="togglePlan(this)">
+    <span class="plan-emoji">⚡</span>
+    <div style="flex:1;">
+      <div class="plan-section-title">Quick Reference Cheat Sheet</div>
+      <div class="plan-section-sub">Print this and keep it visible</div>
+    </div>
+    <svg class="accordion-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="plan-body">
+<div class="plan-two-col">
+  <div class="plan-col">
+    <h4>Before Entry — Ask Yourself</h4>
+    <ul>
+      <li>Is there a clear trigger? (VWAP reclaim, level bounce, breakout confirm)</li>
+      <li>Where exactly is my stop? (specific level, not a dollar amount)</li>
+      <li>What's my first and second target? (pre-planned, not improvised)</li>
+      <li>Is my size correct? (1–2% risk on account)</li>
+      <li>Am I within an active session window? (no trades outside 9:30–3:30 PM)</li>
+    </ul>
+  </div>
+  <div class="plan-col">
+    <h4>After Each Trade — Log It</h4>
+    <ul>
+      <li>Entry time, price, and contract count</li>
+      <li>Exit time, price, and points captured</li>
+      <li>Was the setup valid? Did I follow the rules?</li>
+      <li>Emotional state during the trade (calm / anxious / impatient)</li>
+      <li>One improvement for next time</li>
+    </ul>
+  </div>
+</div>
+<div class="signal-light" style="margin-top:16px;">
+  <div class="signal-row signal-green">✅ <div><strong>GREEN LIGHT:</strong> Clear setup · Within session · Stop placed · Size correct · Calm mindset</div></div>
+  <div class="signal-row signal-amber">⚠️ <div><strong>CAUTION:</strong> Setup is okay but not A+ · News in 90 min · 3rd trade today · Slightly wide stop</div></div>
+  <div class="signal-row signal-red">🚫 <div><strong>RED LIGHT:</strong> No clear trigger · News imminent · 4th trade today · Already down 15 pts · Emotional</div></div>
+</div></div>
+</div>
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white;">S</div>
+        <div style="font-weight:700;font-size:15px;">SireMammat</div>
+      </div>
+      <p>Free futures trading education built on Al Brooks price action methodology.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Education</h4>
+      <ul>
+        <li><a href="../learn/">Learn Price Action</a></li>
+<li><a href="../strategies/">Strategies</a></li>
+<li><a href="../playbooks/">Playbooks</a></li>
+<li><a href="../trading-plan/">Trading Plan</a></li>
+<li><a href="../tools/">Tools & Brokers</a></li>
+<li><a href="../calculator/">Position Calculator</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://twitter.com/SireMammat" target="_blank">X / Twitter</a></li>
+        <li><a href="https://youtube.com/@SireMammat" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Disclaimer</h4>
+      <p style="font-size:12px;color:var(--text3);line-height:1.6;">Trading involves substantial risk of loss. Past performance is not indicative of future results. All content is educational only.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sire Mammat · All rights reserved</span>
+    <span>Al Brooks Methodology · Free Education</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function togglePlan(header) {
+  const body = header.nextElementSibling;
+  const isOpen = header.classList.contains('open');
+  header.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+  header.querySelector('svg').style.transform = !isOpen ? 'rotate(180deg)' : '';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategies | SireMammat</title>
+<meta name="description" content="Al Brooks price action, trading strategies, playbooks, and case studies. Trade the market, not the noise.">
+<meta name="author" content="Sire Mammat">
+<meta property="og:title" content="Strategies | SireMammat">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@SireMammat">
+<meta name="theme-color" content="#0B0F19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.strat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
+.strat-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; gap: 16px; }
+.strat-header:hover { background: var(--bg3); }
+.strat-badge { font-size: 22px; font-weight: 800; color: var(--accent); min-width: 50px; font-family: var(--mono); }
+.strat-info { flex: 1; }
+.strat-name { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); }
+.strat-title { font-size: 18px; font-weight: 700; margin: 2px 0; }
+.strat-sub { font-size: 13px; color: var(--text2); }
+.strat-meta-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.strat-body { display: none; border-top: 1px solid var(--border); }
+.strat-body.open { display: block; }
+.strat-section { padding: 24px; border-bottom: 1px solid var(--border); }
+.strat-section:last-child { border-bottom: none; }
+.strat-section-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.strat-section ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.strat-section ul li { font-size: 14px; color: var(--text2); padding-left: 20px; position: relative; line-height: 1.6; }
+.strat-section ul li::before { content: '•'; position: absolute; left: 0; color: var(--text3); }
+.strat-sections-grid { display: grid; grid-template-columns: 1fr 1fr; }
+@media(max-width:700px){ .strat-sections-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker-label">DELAYED</div>
+  <div class="ticker-scroll"></div>
+</div>
+
+<nav class="main-nav">
+  <a href="../" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div><div class="nav-logo-text">SireMammat</div><div class="nav-logo-sub">Education</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../" class="active">Hub</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../indicators/">Indicators</a></li>
+    <li><a href="../tools/">Tools</a></li>
+    <li><a href="../analysis/">Analysis</a></li>
+    <li><a href="../calculator/">Calculator</a></li>
+    <li><a href="../#contact">Contact</a></li>
+    <li><a href="https://wise.com/pay/me/muhammads5009?utm_source=request_flow" target="_blank" class="nav-cta">☕ Buy Me a Coffee</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" aria-label="Menu">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+
+<div class="page-header">
+  <div class="eyebrow">Frameworks</div>
+  <h1>Trading Strategies</h1>
+  <p>Five documented strategies with entry rules, stop placement, and target logic. Click any strategy to expand the full playbook.</p>
+</div>
+<div class="content-wrap">
+<div class="strat-card">
+  <div class="strat-header" onclick="toggleStrat(this)">
+    <div class="strat-badge">M2B</div>
+    <div class="strat-info">
+      <div class="strat-name">Strategy 1</div>
+      <div class="strat-title">Moving Average 2nd Entry Long</div>
+      <div class="strat-sub">With-Trend Long · EMA</div>
+      <div class="strat-meta-row" style="margin-top:8px;"><span class="tag tag-green">High (trend)</span> <span class="tag tag-blue">Long</span> <span class="tag tag-amber">2:1+ R:R</span></div>
+    </div>
+    <svg class="accordion-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="strat-body">
+    <div class="strat-sections-grid"><div class="strat-section"><div class="strat-section-title">Trend Context Required</div><ul><li>Strong uptrend - series of higher highs and higher lows. Price predominantly above EMA</li><li>Avoid if trend is weak, choppy, or sideways</li></ul></div><div class="strat-section"><div class="strat-section-title">Pullback Pattern</div><ul><li>Two-legged pullback down to the EMA</li><li>First leg bounces, second leg tests the EMA again — the double-test confirms the level is holding</li></ul></div><div class="strat-section"><div class="strat-section-title">Why It Works</div><ul><li>Institutions buy pullbacks to the EMA in uptrends</li><li>The second touch flushes out weak longs and attracts new buyers, creating a higher-probability entry point</li></ul></div><div class="strat-section"><div class="strat-section-title">Entry Trigger</div><ul><li>Buy stop 1 tick above the high of the bar that touches the EMA on the 2nd leg down</li><li>Do NOT enter on the first leg — wait for the second test of the EMA</li><li>The signal bar should ideally be a bull bar or show a lower wick rejection at the EMA</li><li>If the entry is not triggered within 2 bars, cancel the order — the setup is stale</li></ul></div><div class="strat-section"><div class="strat-section-title">Stop Loss</div><ul><li>Stop goes 1 tick below the low of the 2nd leg pullback</li><li>Move stop to breakeven once price has moved 50% of the way to the first target</li><li>Never widen the stop — if the thesis is wrong, take the loss cleanly</li></ul></div><div class="strat-section"><div class="strat-section-title">Target Logic</div><ul><li>First target: prior swing high — exit 50% of position here</li><li>Second target: measured move — project the height of the prior bull leg from the pullback low</li><li>Move stop to breakeven after first target is hit. Let the runner work</li></ul></div><div class="strat-section"><div class="strat-section-title">Pre-Entry Checklist</div><ul><li>Uptrend confirmed — HH and HL structure visible</li><li>EMA is rising (not flat or declining)</li><li>Two-legged pullback structure clearly visible</li><li>Signal bar is a bull bar or shows lower wick rejection</li><li>Risk is within 1-2% of account (size check done)</li><li>No major news event in the next 30 minutes</li></ul></div><div class="strat-section"><div class="strat-section-title">Skip the Trade If...</div><ul><li>Trend is weak, choppy, or in a tight trading range</li><li>EMA is flat or pointing downward</li><li>Pullback is only one leg (this becomes a 1st entry)</li><li>Signal bar is a large bear bar closing on its low</li><li>Already taken 4 trades today (daily max reached)</li><li>Already down 15 pts today (kill switch triggered)</li></ul></div></div>
+  </div>
+</div>
+<div class="strat-card">
+  <div class="strat-header" onclick="toggleStrat(this)">
+    <div class="strat-badge">M2S</div>
+    <div class="strat-info">
+      <div class="strat-name">Strategy 2</div>
+      <div class="strat-title">Moving Average 2nd Entry Short</div>
+      <div class="strat-sub">With-Trend Short · EMA</div>
+      <div class="strat-meta-row" style="margin-top:8px;"><span class="tag tag-green">High (trend)</span> <span class="tag tag-red">Short</span> <span class="tag tag-amber">2:1+ R:R</span></div>
+    </div>
+    <svg class="accordion-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="strat-body">
+    <div class="strat-sections-grid"><div class="strat-section"><div class="strat-section-title">Trend Context Required</div><ul><li>Strong downtrend - series of lower lows and lower highs. Price predominantly below EMA</li><li>Avoid if trend is weak, choppy, or sideways</li></ul></div><div class="strat-section"><div class="strat-section-title">Pullback Pattern</div><ul><li>Two-legged rally up to the EMA</li><li>First leg bounces up, small pullback, second leg rallies back to EMA</li></ul></div><div class="strat-section"><div class="strat-section-title">Why It Works</div><ul><li>Institutions sell rallies to the EMA in downtrends</li><li>The second touch traps weak shorts who covered and new longs who bought the rally, fueling the next leg down</li></ul></div><div class="strat-section"><div class="strat-section-title">Entry Trigger</div><ul><li>Sell stop 1 tick below the low of the bar that touches the EMA on the 2nd leg up</li><li>Do NOT short on the first leg up — wait for the second test</li><li>The signal bar should ideally be a bear bar or show an upper wick rejection at the EMA</li><li>Cancel the order if not triggered within 2 bars — setup is stale</li></ul></div><div class="strat-section"><div class="strat-section-title">Stop Loss</div><ul><li>Stop goes 1 tick above the high of the 2nd leg rally</li><li>Move stop to breakeven once price has moved 50% of the way to the first target</li><li>Never widen the stop</li></ul></div><div class="strat-section"><div class="strat-section-title">Target Logic</div><ul><li>First target: prior swing low — exit 50% of position here</li><li>Second target: measured move — project the height of the prior bear leg from the rally high</li><li>Move stop to breakeven after first target. Trail the runner</li></ul></div><div class="strat-section"><div class="strat-section-title">Pre-Entry Checklist</div><ul><li>Downtrend confirmed — LL and LH structure visible</li><li>EMA is declining (not flat or rising)</li><li>Two-legged rally structure clearly visible</li><li>Signal bar is a bear bar or shows upper wick rejection</li><li>Risk is within 1-2% of account</li><li>No major news event in the next 30 minutes</li></ul></div><div class="strat-section"><div class="strat-section-title">Skip the Trade If...</div><ul><li>Trend is weak, choppy, or in a tight trading range</li><li>EMA is flat or pointing upward</li><li>Rally is only one leg</li><li>Signal bar is a large bull bar closing on its high</li><li>Already taken 4 trades today</li><li>Already down 15 pts today</li></ul></div></div>
+  </div>
+</div>
+<div class="strat-card">
+  <div class="strat-header" onclick="toggleStrat(this)">
+    <div class="strat-badge">IB</div>
+    <div class="strat-info">
+      <div class="strat-name">Strategy 3</div>
+      <div class="strat-title">Inside Bar Breakout</div>
+      <div class="strat-sub">Breakout Pattern</div>
+      <div class="strat-meta-row" style="margin-top:8px;"><span class="tag tag-amber">Med-High</span> <span class="tag tag-blue">Both Directions</span> <span class="tag tag-amber">2:1+ R:R</span></div>
+    </div>
+    <svg class="accordion-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="strat-body">
+    <div class="strat-sections-grid"><div class="strat-section"><div class="strat-section-title">Pattern Structure</div><ul><li>B1 = Mother bar sets range. B2 = Inside bar (fully contained). B3 = Further compression. B4 = Trigger closes outside B3 range</li></ul></div><div class="strat-section"><div class="strat-section-title">Why It Works</div><ul><li>Each bar builds energy inside the mother bar range. The final compression (B3) is a coil</li><li>When B4 closes outside B3, trapped participants on the wrong side exit, fueling the breakout</li></ul></div><div class="strat-section"><div class="strat-section-title">Entry Trigger</div><ul><li>Long: Enter on the close of B4 when it closes above B3 high</li><li>Short: Enter on the close of B4 when it closes below B3 low</li><li>B4 must close outside B3 range — a close inside B3 is not a trigger</li></ul></div><div class="strat-section"><div class="strat-section-title">Stop Loss</div><ul><li>Wide stop: 1 tick beyond B1 opposite extreme</li><li>Tight stop: 1 tick beyond B3 opposite extreme — tighter R:R but higher chance of being stopped out early</li><li>Move to breakeven once T1 (1:1) is hit</li></ul></div><div class="strat-section"><div class="strat-section-title">Target Logic</div><ul><li>T1 (1:1): Project B1 full range from entry point. Exit 50% here</li><li>T2 (2:1): Double B1 range from entry. Exit 25% here, trail remaining 25%</li><li>Exit all if price re-enters B3 range after breakout — setup has failed</li></ul></div><div class="strat-section"><div class="strat-section-title">Skip the Trade If...</div><ul><li>B4 closes inside B3 range — no trigger confirmed</li><li>B4 is a large outside bar engulfing B3 entirely</li><li>Breakout direction is counter-trend in a weak market</li><li>Any bar pokes outside B1 range before B4 triggers</li></ul></div></div>
+  </div>
+</div>
+<div class="strat-card">
+  <div class="strat-header" onclick="toggleStrat(this)">
+    <div class="strat-badge">FP</div>
+    <div class="strat-info">
+      <div class="strat-name">Strategy 4</div>
+      <div class="strat-title">Failure Patterns</div>
+      <div class="strat-sub">Reversal Trap</div>
+      <div class="strat-meta-row" style="margin-top:8px;"><span class="tag tag-amber">Context Dependent</span> <span class="tag tag-blue">Both Directions</span> <span class="tag tag-red">Advanced</span></div>
+    </div>
+    <svg class="accordion-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="strat-body">
+    <div class="strat-sections-grid"><div class="strat-section"><div class="strat-section-title">Why It Works</div><ul><li>When many traders get caught on the wrong side of a setup, they must exit</li><li>This forced exit flow drives the counter-move with conviction</li></ul></div><div class="strat-section"><div class="strat-section-title">Entry Trigger</div><ul><li>H2 Failure: H2 buy fires, price reverses below signal bar — short below signal bar low once reversal confirmed</li><li>L2 Failure: L2 short fires, strong buying absorbs all sellers — long above signal bar high once reversal confirmed</li><li>Bear Micro-Channel: Keep shorting with the channel on every small bounce until exhaustion signal appears</li></ul></div><div class="strat-section"><div class="strat-section-title">Stop Loss</div><ul><li>H2 Failure: Stop above signal bar high</li><li>L2 Failure: Stop below signal bar low</li><li>Bear Micro-Channel: Stop above prior bar high</li><li>Move to breakeven once 50% to target reached</li></ul></div><div class="strat-section"><div class="strat-section-title">Target Logic</div><ul><li>H2 Failure: Measured move down or prior swing low</li><li>L2 Failure: Measured move up or prior swing high</li><li>Bear Micro-Channel: Continue until exhaustion signal (large bull outside bar, gap reversal, or close far above channel top)</li></ul></div><div class="strat-section"><div class="strat-section-title">Skip the Trade If...</div><ul><li>Thesis is not clear</li><li>Setup is ambiguous or borderline</li><li>Risk is undefined</li></ul></div></div>
+  </div>
+</div>
+<div class="strat-card">
+  <div class="strat-header" onclick="toggleStrat(this)">
+    <div class="strat-badge">IRB</div>
+    <div class="strat-info">
+      <div class="strat-name">Strategy 5</div>
+      <div class="strat-title">Inventory Retracement Bar</div>
+      <div class="strat-sub">Trend Continuation (Hoffman)</div>
+      <div class="strat-meta-row" style="margin-top:8px;"><span class="tag tag-green">High (trend)</span> <span class="tag tag-blue">Both Directions</span> <span class="tag tag-amber">2:1+ R:R</span></div>
+    </div>
+    <svg class="accordion-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="strat-body">
+    <div class="strat-sections-grid"><div class="strat-section"><div class="strat-section-title">Definition</div><ul><li>Single candle where open & close are 45%+ off high (bear) or low (bull)</li><li>Signals institutional reload complete</li><li>Candle color does NOT matter — only the position of open/close relative to bar extremes</li></ul></div><div class="strat-section"><div class="strat-section-title">Why It Works</div><ul><li>Institutions accumulate/distribute inventory in stages</li><li>The IRB marks the reload moment — they have filled their counter-trend inventory and price is ready to resume</li></ul></div><div class="strat-section"><div class="strat-section-title">Entry Trigger</div><ul><li>Long: Buy stop 1 tick above the high of the IRB candle</li><li>Short: Sell stop 1 tick below the low of the IRB candle</li><li>Price should break the IRB level within the next 20 bars</li><li>Beyond 20 bars: Signal degrades significantly — cancel the order</li></ul></div><div class="strat-section"><div class="strat-section-title">Stop Loss</div><ul><li>Long: 1 tick below IRB low</li><li>Short: 1 tick above IRB high</li><li>Max risk: less than 1% of capital per trade</li><li>Move to breakeven once 50% to target reached</li></ul></div><div class="strat-section"><div class="strat-section-title">Target Logic</div><ul><li>Lock 50% at 50% to target</li><li>Lock 80% at 80% to target</li><li>Lock 90%+ at major S/R (Fib, Pivot)</li><li>Trail remaining position in strong trend</li></ul></div><div class="strat-section"><div class="strat-section-title">Pre-Entry Checklist</div><ul><li>20 EMA at 45 degree angle</li><li>Higher timeframe must trend in same direction</li><li>Open & Close clearly 45%+ off extreme</li><li>Candle range less than ATR × 2</li><li>Risk less than 1% of capital</li></ul></div><div class="strat-section"><div class="strat-section-title">Skip the Trade If...</div><ul><li>Trend is weak, choppy, or sideways</li><li>EMA is flat or pointing against trade direction</li><li>Higher timeframe not aligned</li><li>IRB range greater than ATR × 2</li><li>4 trades already taken</li><li>Already down 15 pts (kill switch)</li></ul></div></div>
+  </div>
+</div></div>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white;">S</div>
+        <div style="font-weight:700;font-size:15px;">SireMammat</div>
+      </div>
+      <p>Free futures trading education built on Al Brooks price action methodology.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Education</h4>
+      <ul>
+        <li><a href="../learn/">Learn Price Action</a></li>
+<li><a href="../strategies/">Strategies</a></li>
+<li><a href="../playbooks/">Playbooks</a></li>
+<li><a href="../trading-plan/">Trading Plan</a></li>
+<li><a href="../tools/">Tools & Brokers</a></li>
+<li><a href="../calculator/">Position Calculator</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://twitter.com/SireMammat" target="_blank">X / Twitter</a></li>
+        <li><a href="https://youtube.com/@SireMammat" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Disclaimer</h4>
+      <p style="font-size:12px;color:var(--text3);line-height:1.6;">Trading involves substantial risk of loss. Past performance is not indicative of future results. All content is educational only.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sire Mammat · All rights reserved</span>
+    <span>Al Brooks Methodology · Free Education</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function toggleStrat(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.strat-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.strat-header svg').forEach(s => s.style.transform = '');
+  if (!isOpen) {
+    body.classList.add('open');
+    header.querySelector('svg').style.transform = 'rotate(180deg)';
+  }
+}
+</script>
+</body>
+</html>

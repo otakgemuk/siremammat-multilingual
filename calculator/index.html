@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Position Calculator | SireMammat</title>
+<meta name="description" content="Al Brooks price action, trading strategies, playbooks, and case studies. Trade the market, not the noise.">
+<meta name="author" content="Sire Mammat">
+<meta property="og:title" content="Position Calculator | SireMammat">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@SireMammat">
+<meta name="theme-color" content="#0B0F19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.calc-container { max-width: 700px; margin: 0 auto; }
+.calc-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+.calc-section-title { font-size: 13px; font-weight: 700; color: var(--text2); margin-bottom: 16px; letter-spacing: 0.04em; text-transform: uppercase; font-size: 11px; }
+.btn-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.btn-group button { padding: 8px 18px; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; color: var(--text2); font-size: 13px; cursor: pointer; transition: all 0.15s; font-family: var(--font); }
+.btn-group button.active, .btn-group button:hover { background: var(--accent); border-color: var(--accent); color: white; }
+.range-row { margin-bottom: 24px; }
+.range-label-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.range-label { font-size: 13px; color: var(--text2); }
+.range-val { font-size: 14px; font-weight: 700; font-family: var(--mono); color: var(--text); background: var(--bg3); padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); }
+input[type=range] { width: 100%; -webkit-appearance: none; height: 4px; background: var(--border2); border-radius: 2px; outline: none; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent); border-radius: 50%; cursor: pointer; }
+.result-box { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 24px; }
+.result-big { font-size: 48px; font-weight: 800; font-family: var(--mono); color: var(--text); margin: 8px 0; }
+.result-label { font-size: 12px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; }
+.result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.result-item { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; }
+.result-item .r-val { font-size: 18px; font-weight: 700; font-family: var(--mono); }
+.result-item .r-lbl { font-size: 11px; color: var(--text3); margin-top: 2px; }
+.formula-box { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-top: 16px; font-family: var(--mono); font-size: 13px; color: var(--text2); line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker-label">DELAYED</div>
+  <div class="ticker-scroll"></div>
+</div>
+
+<nav class="main-nav">
+  <a href="../" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div><div class="nav-logo-text">SireMammat</div><div class="nav-logo-sub">Education</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../">Hub</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../indicators/">Indicators</a></li>
+    <li><a href="../tools/">Tools</a></li>
+    <li><a href="../analysis/">Analysis</a></li>
+    <li><a href="../calculator/" class="active">Calculator</a></li>
+    <li><a href="../#contact">Contact</a></li>
+    <li><a href="https://wise.com/pay/me/muhammads5009?utm_source=request_flow" target="_blank" class="nav-cta">☕ Buy Me a Coffee</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" aria-label="Menu">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+
+<div class="page-header">
+  <div class="eyebrow">Interactive Tool</div>
+  <h1>Position Size Calculator</h1>
+  <p>Calculate optimal contract size based on your account, risk tolerance, and stop loss. Never risk more than 1–2% per trade.</p>
+</div>
+<div class="content-wrap">
+  <div class="calc-container">
+    <div class="calc-card">
+      <div class="calc-section-title">Contract</div>
+      <div class="btn-group" id="contractBtns">
+        <button class="active" onclick="setContract('ES',50)">ES</button>
+        <button onclick="setContract('MES',5)">MES</button>
+        <button onclick="setContract('NQ',20)">NQ</button>
+        <button onclick="setContract('MNQ',2)">MNQ</button>
+      </div>
+      <div id="contractSub" style="font-size:12px;color:var(--text3);margin-bottom:24px;">E-mini S&P 500 · $50/pt</div>
+
+      <div class="calc-section-title">Account Size ($)</div>
+      <div class="btn-group" id="accountBtns">
+        <button onclick="setAccount(10000)">$10k</button>
+        <button class="active" onclick="setAccount(25000)">$25k</button>
+        <button onclick="setAccount(50000)">$50k</button>
+        <button onclick="setAccount(100000)">$100k</button>
+      </div>
+
+      <div class="range-row">
+        <div class="range-label-row">
+          <span class="range-label">Risk Per Trade (%)</span>
+          <span class="range-val" id="riskVal">1%</span>
+        </div>
+        <input type="range" id="riskRange" min="0.5" max="2" step="0.5" value="1" oninput="update()">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-top:4px;"><span>0.5%</span><span>1%</span><span>1.5%</span><span>2%</span></div>
+      </div>
+
+      <div class="range-row">
+        <div class="range-label-row">
+          <span class="range-label">Stop Loss (points)</span>
+          <span class="range-val" id="stopVal">5</span>
+        </div>
+        <input type="range" id="stopRange" min="2" max="20" step="1" value="5" oninput="update()">
+      </div>
+
+      <div class="range-row">
+        <div class="range-label-row">
+          <span class="range-label">Target (points)</span>
+          <span class="range-val" id="targetVal">20</span>
+        </div>
+        <input type="range" id="targetRange" min="5" max="60" step="5" value="20" oninput="update()">
+      </div>
+
+      <div class="result-box">
+        <div class="result-label">Trade This Many Contracts</div>
+        <div class="result-big" id="contracts">1</div>
+        <div id="contractsLabel" style="font-size:13px;color:var(--text2);">ES · contract</div>
+        <div class="result-grid">
+          <div class="result-item"><div class="r-val" id="dollarRisk">$250</div><div class="r-lbl">Dollar Risk</div></div>
+          <div class="result-item"><div class="r-val" id="reward">+$1,000</div><div class="r-lbl">Reward at Target</div></div>
+          <div class="result-item"><div class="r-val" id="rratio">1 : 4.0</div><div class="r-lbl">Risk : Reward</div></div>
+          <div class="result-item"><div class="r-val" id="riskPct">1.00%</div><div class="r-lbl">of Account</div></div>
+        </div>
+        <div class="formula-box" id="formulaBox">
+          Account: $25,000<br>
+          Risk $: $25,000 × 1% = $250<br>
+          Per contract: 5 pts × $50 = $250<br>
+          Contracts: $250 ÷ $250 = 1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white;">S</div>
+        <div style="font-weight:700;font-size:15px;">SireMammat</div>
+      </div>
+      <p>Free futures trading education built on Al Brooks price action methodology.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Education</h4>
+      <ul>
+        <li><a href="../learn/">Learn Price Action</a></li>
+<li><a href="../strategies/">Strategies</a></li>
+<li><a href="../playbooks/">Playbooks</a></li>
+<li><a href="../trading-plan/">Trading Plan</a></li>
+<li><a href="../tools/">Tools & Brokers</a></li>
+<li><a href="../calculator/">Position Calculator</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://twitter.com/SireMammat" target="_blank">X / Twitter</a></li>
+        <li><a href="https://youtube.com/@SireMammat" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Disclaimer</h4>
+      <p style="font-size:12px;color:var(--text3);line-height:1.6;">Trading involves substantial risk of loss. Past performance is not indicative of future results. All content is educational only.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sire Mammat · All rights reserved</span>
+    <span>Al Brooks Methodology · Free Education</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+let contract = { sym: 'ES', mult: 50, desc: 'E-mini S&P 500 · $50/pt' };
+let account = 25000;
+const contractDescs = {ES:'E-mini S&P 500 · $50/pt',MES:'Micro E-mini S&P · $5/pt',NQ:'E-mini Nasdaq-100 · $20/pt',MNQ:'Micro E-mini NQ · $2/pt'};
+
+function setContract(sym, mult) {
+  contract = { sym, mult, desc: contractDescs[sym] };
+  document.querySelectorAll('#contractBtns button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('contractSub').textContent = contractDescs[sym];
+  update();
+}
+function setAccount(val) {
+  account = val;
+  document.querySelectorAll('#accountBtns button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  update();
+}
+function update() {
+  const risk = parseFloat(document.getElementById('riskRange').value);
+  const stop = parseInt(document.getElementById('stopRange').value);
+  const target = parseInt(document.getElementById('targetRange').value);
+  document.getElementById('riskVal').textContent = risk + '%';
+  document.getElementById('stopVal').textContent = stop;
+  document.getElementById('targetVal').textContent = target;
+  const riskDollar = account * (risk / 100);
+  const perContract = stop * contract.mult;
+  const contracts = Math.max(1, Math.floor(riskDollar / perContract));
+  const actualRisk = contracts * perContract;
+  const rewardDollar = contracts * target * contract.mult;
+  const rr = (target / stop).toFixed(1);
+  document.getElementById('contracts').textContent = contracts;
+  document.getElementById('contractsLabel').textContent = contract.sym + ' · ' + (contracts === 1 ? 'contract' : 'contracts');
+  document.getElementById('dollarRisk').textContent = '$' + actualRisk.toLocaleString();
+  document.getElementById('reward').textContent = '+$' + rewardDollar.toLocaleString();
+  document.getElementById('rratio').textContent = '1 : ' + rr;
+  document.getElementById('riskPct').textContent = (actualRisk/account*100).toFixed(2) + '%';
+  document.getElementById('formulaBox').innerHTML =
+    `Account: $${account.toLocaleString()}<br>Risk $: $${account.toLocaleString()} × ${risk}% = $${riskDollar.toFixed(0)}<br>Per contract: ${stop} pts × $${contract.mult} = $${perContract}<br>Contracts: $${riskDollar.toFixed(0)} ÷ $${perContract} = ${contracts}`;
+}
+</script>
+</body>
+</html>

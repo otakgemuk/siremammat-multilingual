@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Price Action | SireMammat</title>
+<meta name="description" content="Al Brooks price action, trading strategies, playbooks, and case studies. Trade the market, not the noise.">
+<meta name="author" content="Sire Mammat">
+<meta property="og:title" content="Learn Price Action | SireMammat">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@SireMammat">
+<meta name="theme-color" content="#0B0F19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.lesson-grid { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: start; }
+.lesson-sidebar { position: sticky; top: 72px; }
+.lesson-sidebar-inner { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.sidebar-header { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 13px; font-weight: 700; }
+.sidebar-phase { padding: 12px 20px 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); }
+.sidebar-link { display: block; padding: 8px 20px; font-size: 13px; color: var(--text2); border-radius: 0; transition: all 0.1s; cursor: pointer; }
+.sidebar-link:hover { background: var(--bg3); color: var(--text); }
+.sidebar-link.active { background: var(--accent); color: white; }
+.lesson-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+.lesson-header { display: flex; align-items: flex-start; gap: 16px; padding: 20px 24px; cursor: pointer; }
+.lesson-header:hover { background: var(--bg3); }
+.lesson-num { font-size: 11px; font-weight: 700; color: var(--text3); min-width: 28px; padding-top: 2px; }
+.lesson-meta { flex: 1; }
+.lesson-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.lesson-preview { font-size: 13px; color: var(--text2); }
+.lesson-body { display: none; padding: 0 24px 24px; border-top: 1px solid var(--border); margin-top: 0; }
+.lesson-body.open { display: block; }
+.lesson-body ul { list-style: none; margin: 16px 0; display: flex; flex-direction: column; gap: 6px; }
+.lesson-body ul li { font-size: 14px; color: var(--text2); padding-left: 18px; position: relative; line-height: 1.6; }
+.lesson-body ul li::before { content: '•'; position: absolute; left: 0; color: var(--accent); }
+.phase-header { padding: 32px 0 16px; }
+.phase-header h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.phase-header p { font-size: 13px; color: var(--text2); }
+.book-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.book-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+.book-num { font-size: 11px; color: var(--text3); margin-bottom: 8px; font-weight: 700; }
+.book-phase { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+.book-title { font-size: 16px; font-weight: 700; line-height: 1.3; }
+@media(max-width:900px){ .lesson-grid{grid-template-columns:1fr;} .lesson-sidebar{position:static;} .book-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker-label">DELAYED</div>
+  <div class="ticker-scroll"></div>
+</div>
+
+<nav class="main-nav">
+  <a href="../" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div><div class="nav-logo-text">SireMammat</div><div class="nav-logo-sub">Education</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../" class="active">Hub</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../indicators/">Indicators</a></li>
+    <li><a href="../tools/">Tools</a></li>
+    <li><a href="../analysis/">Analysis</a></li>
+    <li><a href="../calculator/">Calculator</a></li>
+    <li><a href="../#contact">Contact</a></li>
+    <li><a href="https://wise.com/pay/me/muhammads5009?utm_source=request_flow" target="_blank" class="nav-cta">☕ Buy Me a Coffee</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" aria-label="Menu">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+
+<div class="page-header">
+  <div class="eyebrow">Education</div>
+  <h1>Learn Price Action</h1>
+  <p>Structured curriculum covering Al Brooks methodology, market structure, and price action fundamentals.</p>
+  <div style="display:flex;gap:24px;padding:0 24px 0;max-width:1100px;margin:20px auto 0;flex-wrap:wrap;">
+  <div class="stat-badge"><div class="val">6</div><div class="lbl">Topics</div></div>
+  <div class="stat-badge"><div class="val">34</div><div class="lbl">Lessons</div></div>
+</div>
+</div>
+<div class="content-wrap">
+  <div class="lesson-grid">
+    <div class="lesson-sidebar">
+      <div class="lesson-sidebar-inner">
+        <div class="sidebar-header">Course Contents</div>
+        <div class="sidebar-phase">Phase 1: Foundations</div><a class="sidebar-link" href="#lesson-1">01 What is Price Action?</a><a class="sidebar-link" href="#lesson-2">02 Reading Individual Bars</a><a class="sidebar-link" href="#lesson-3">03 Signal Bars & Follow-Through</a><a class="sidebar-link" href="#lesson-4">04 Timeframes & Context</a><a class="sidebar-link" href="#lesson-5">05 Support & Resistance</a><a class="sidebar-link" href="#lesson-6">06 VWAP — Volume Weighted Average Price</a><div class="sidebar-phase">Phase 2: Market Structure</div><a class="sidebar-link" href="#lesson-7">07 Trend Days vs Range Days</a><a class="sidebar-link" href="#lesson-8">08 Bull & Bear Trends</a><a class="sidebar-link" href="#lesson-9">09 Trading Ranges</a><a class="sidebar-link" href="#lesson-10">10 Measured Moves & Legs</a><a class="sidebar-link" href="#lesson-11">11 Trend Lines & Channels</a><div class="sidebar-phase">Phase 3: Entry Setups</div><a class="sidebar-link" href="#lesson-12">12 M2B: Moving Average 2nd Entry Long</a><a class="sidebar-link" href="#lesson-13">13 M2S: Moving Average 2nd Entry Short</a><a class="sidebar-link" href="#lesson-14">14 Inside Bar Pattern (IB)</a><a class="sidebar-link" href="#lesson-15">15 Gap & Go</a><a class="sidebar-link" href="#lesson-16">16 Failed Breakouts & Traps</a><a class="sidebar-link" href="#lesson-17">17 Pullback Entries (2nd Entry)</a><a class="sidebar-link" href="#lesson-18">18 Breakout Pullback Entry</a><a class="sidebar-link" href="#lesson-19">19 Trend Reversals</a><a class="sidebar-link" href="#lesson-20">20 Wedge Patterns</a><div class="sidebar-phase">Phase 4: Risk Management</div><a class="sidebar-link" href="#lesson-21">21 Stop Placement Rules</a><a class="sidebar-link" href="#lesson-22">22 Risk:Reward Ratios</a><a class="sidebar-link" href="#lesson-23">23 Position Sizing</a><a class="sidebar-link" href="#lesson-24">24 The Kill Switch</a><div class="sidebar-phase">Phase 5: Market Conditions</div><a class="sidebar-link" href="#lesson-25">25 VIX & Market Volatility</a><a class="sidebar-link" href="#lesson-26">26 FOMC, CPI, NFP Events</a><a class="sidebar-link" href="#lesson-27">27 Gap Analysis</a><a class="sidebar-link" href="#lesson-28">28 Session Management</a><div class="sidebar-phase">Phase 6: Psychology & Execution</div><a class="sidebar-link" href="#lesson-29">29 The Three Disciplines</a><a class="sidebar-link" href="#lesson-30">30 Revenge Trading</a><a class="sidebar-link" href="#lesson-31">31 Overtrading</a><a class="sidebar-link" href="#lesson-32">32 Keeping a Trading Journal</a><a class="sidebar-link" href="#lesson-33">33 Consistency Over Perfection</a><a class="sidebar-link" href="#lesson-34">34 The Long Road</a>
+      </div>
+    </div>
+    <div>
+      <div class="phase-header" id="phase_1_foundations"><h2>Phase 1: Foundations</h2><p>The building blocks of price action trading.</p></div>
+<div class="lesson-card" id="lesson-1">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">01</div>
+    <div class="lesson-meta">
+      <span class="tag tag-green" style="margin-bottom:6px;display:inline-block;">Beginner</span>
+      <div class="lesson-title">What is Price Action?</div>
+      <div class="lesson-preview">Price action means the market's actual movement reflects all available information.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Price reflects everything — every fundamental, sentiment, and order flow event is already in the bar</li><li>Indicators are derivatives — they are calculated from price; price action reads the source directly</li><li>All traders see the same chart — price action setups work because enough participants act on the same signals</li><li>Brooks' core belief: the market is mostly random but has brief periods of non-randomness that can be traded</li></ul>
+    <blockquote class="trade-quote">The market is always in breakout mode or trading range mode, and you need to know which before you place a trade.<cite>— Al Brooks</cite></blockquote>
+  </div>
+</div>
+<div class="lesson-card" id="lesson-2">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">02</div>
+    <div class="lesson-meta">
+      <span class="tag tag-green" style="margin-bottom:6px;display:inline-block;">Beginner</span>
+      <div class="lesson-title">Reading Individual Bars</div>
+      <div class="lesson-preview">Every candle has OHLC. The relationship between these tells you who won the battle between buyers and sellers.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Open, high, low, close — each component reveals who won control during that period</li><li>Bull bar: close above open. Bear bar: close below open. Doji: indecision</li><li>Wick analysis: large upper wick = sellers rejected high; large lower wick = buyers rejected low</li><li>Bar size matters — a large-bodied bar shows conviction; a small body shows uncertainty</li><li>The close is most important — where price closes within the bar reveals who 'won' that bar</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-3">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">03</div>
+    <div class="lesson-meta">
+      <span class="tag tag-green" style="margin-bottom:6px;display:inline-block;">Beginner</span>
+      <div class="lesson-title">Signal Bars & Follow-Through</div>
+      <div class="lesson-preview">A signal bar shows potential entry. The next bar (follow-through) confirms if the setup is real or a trap.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Strong signal bar: large body, closes near high (bull) or low (bear), small wicks, opens near opposite end</li><li>Weak signal bar: large wicks, small body, closes in the middle — low confidence setup</li><li>Entry bar = the bar you actually enter on. Setup bar = the bar before that confirmed the pattern</li><li>Follow-through — a strong close on the entry bar confirms momentum. Weak follow-through = consider exiting early</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-4">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">04</div>
+    <div class="lesson-meta">
+      <span class="tag tag-green" style="margin-bottom:6px;display:inline-block;">Beginner</span>
+      <div class="lesson-title">Timeframes & Context</div>
+      <div class="lesson-preview">Brooks' default: 5-minute ES chart. Higher timeframe context is mandatory.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Brooks' default: 5-minute ES chart — most of his examples and rules are calibrated to this</li><li>Higher timeframe context is mandatory — a buy signal on 5-min inside a bear trend on daily is low probability</li><li>Every bar on a higher TF = a pattern on a lower TF — zooming in reveals the internal structure</li><li>Do not over-chart — Brooks recommends mastering one chart before adding more timeframes</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-5">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">05</div>
+    <div class="lesson-meta">
+      <span class="tag tag-green" style="margin-bottom:6px;display:inline-block;">Beginner</span>
+      <div class="lesson-title">Support & Resistance</div>
+      <div class="lesson-preview">Prior swing high/low = most reliable S/R. The market has memory at these levels.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Prior swing high/low = most reliable S/R. The market has memory at these levels</li><li>Prior day high, low, close — institutional levels that many algorithms reference</li><li>S/R becomes opposite — broken support becomes resistance (and vice versa). Watch for the retest</li><li>Exact vs approximate: Brooks doesn't use precise levels — he uses zones and expects noise around them</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-6">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">06</div>
+    <div class="lesson-meta">
+      <span class="tag tag-green" style="margin-bottom:6px;display:inline-block;">Beginner</span>
+      <div class="lesson-title">VWAP — Volume Weighted Average Price</div>
+      <div class="lesson-preview">VWAP shows where institutions are accumulating. Price respects it like a magnet.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Above VWAP = bullish bias. Below VWAP = bearish bias</li><li>Touch VWAP = test level — watch for rejection or acceptance</li><li>VWAP is institutional — algorithms reference it for execution quality</li><li>VWAP bands (standard deviation) act as dynamic S/R</li></ul>
+    
+  </div>
+</div><div class="phase-header" id="phase_2_market_structure"><h2>Phase 2: Market Structure</h2><p>Understanding the bigger picture.</p></div>
+<div class="lesson-card" id="lesson-7">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">07</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Trend Days vs Range Days</div>
+      <div class="lesson-preview">Trend day: opens near one extreme, closes near the other. Range day: price oscillates.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Trend day: opens near one extreme, closes near the other. Pullbacks are shallow and brief</li><li>Range day: price oscillates between a high and low with no dominant direction. Fade the extremes</li><li>Trading range day strategy: buy low, sell high. Never chase breakouts on range days until confirmed</li><li>Trend day strategy: buy every pullback, never fade. Exit at measured move targets or EOD</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-8">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">08</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Bull & Bear Trends</div>
+      <div class="lesson-preview">HH/HL structure = bull trend. LL/LH structure = bear trend.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>HH/HL structure = bull trend. LL/LH structure = bear trend. Breaking this structure signals reversal</li><li>Strong trend: consecutive bull bars, small pullbacks, bars close near high, little overlap between bars</li><li>Weak trend: overlapping bars, large wicks against trend, deep pullbacks — consider reducing size</li><li>Always-in-long/short: Brooks asks 'if forced to be in the market, which way?' — this is your bias</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-9">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">09</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Trading Ranges</div>
+      <div class="lesson-preview">Price oscillates between support and resistance. The market spends ~70% of time in ranges.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Definition: price oscillates between support and resistance without a clear directional bias</li><li>Bull trap / bear trap: breakouts from ranges fail 80% of the time in the first attempt</li><li>Tight trading range (TTR): bars overlap heavily — extremely low probability for both sides</li><li>Strategy: fade the extremes (buy bottom third, sell top third) and scale out at the midpoint</li><li>Wait for the second breakout — the first attempt out of a range usually fails and reverses back inside</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-10">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">10</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Measured Moves & Legs</div>
+      <div class="lesson-preview">Two-legged pullback: the most reliable pullback structure.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Two-legged pullback: the most reliable pullback structure — market probes lower, bounces, probes again, then resumes trend</li><li>Measured move (MM): project the height of leg 1 from the start of leg 2 to get a target for leg 2</li><li>Three pushes: three legs in the same direction often mark exhaustion — expect reversal or range</li><li>Swing size matters: small legs = tight market; large legs = trending. Match position size to volatility</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-11">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">11</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Trend Lines & Channels</div>
+      <div class="lesson-preview">Trend line: drawn through swing lows in an uptrend. A break signals potential reversal.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Trend line: drawn through swing lows in an uptrend (or highs in downtrend). A break signals potential reversal</li><li>Channel: parallel line above/below the trend line creates a channel. Price often touches both walls</li><li>Micro trend lines: steep short-term channels during strong momentum phases — breaks signal pauses</li><li>Overshoot and reversal: price often breaks a channel slightly before reversing back inside</li></ul>
+    
+  </div>
+</div><div class="phase-header" id="phase_3_entry_setups"><h2>Phase 3: Entry Setups</h2><p>The specific setups to trade.</p></div>
+<div class="lesson-card" id="lesson-12">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">12</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">M2B: Moving Average 2nd Entry Long</div>
+      <div class="lesson-preview">Two-legged pullback down to 20 EMA. Buy the 2nd touch.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Uptrend required — series of higher highs and higher lows. Price predominantly above EMA</li><li>Two-legged pullback down to the EMA. First leg bounces, second leg tests the EMA again</li><li>Entry: Buy stop 1 tick above the high of the bar that touches the EMA on the 2nd leg down</li><li>Stop: 1 tick below the low of the 2nd leg pullback</li><li>Do not enter on the first leg — wait for the second test to confirm the level is holding</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-13">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">13</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">M2S: Moving Average 2nd Entry Short</div>
+      <div class="lesson-preview">Downtrend. Two-legged rally up to 20 EMA. Short the 2nd touch.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Downtrend required — series of lower lows and lower highs. Price predominantly below EMA</li><li>Two-legged rally up to the EMA. First leg bounces, second leg tests the EMA again</li><li>Entry: Sell stop 1 tick below the low of the bar that touches the EMA on the 2nd leg up</li><li>Stop: 1 tick above the high of the 2nd leg rally</li><li>Institutions sell rallies to the EMA in downtrends — the second touch traps weak shorts</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-14">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">14</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Inside Bar Pattern (IB)</div>
+      <div class="lesson-preview">Mother bar sets range. Inside bars compress. Breakout of inside bar is the trigger.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Definition: high ≤ prior high AND low ≥ prior low. The market paused and compressed</li><li>B1 Mother Bar — wide range, sets boundaries. B2-B3 — compression inside B1</li><li>Breakout entry: buy 1 tick above the inside bar high or sell 1 tick below the low</li><li>Context is everything — inside bar after a strong bull bar = continuation. After a weak bar = neutral</li><li>ioi (inside-outside-inside): a pattern of compression-expansion-compression that often precedes large moves</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-15">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">15</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Gap & Go</div>
+      <div class="lesson-preview">Large gap on open + holds direction + volume = trade the gap.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Gap up = initial bullish bias — but watch if the gap fills in the first 30 min. A gap fill = bear strength</li><li>Gap bar (first bar of day): if it's a strong bull bar, buy on a pullback. If bear bar, consider shorts</li><li>Opening reversal: if the first bar reverses strongly, a reversal is in play</li><li>First-hour range: often sets the framework for the rest of the day — respect its high and low as key levels</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-16">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">16</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Failed Breakouts & Traps</div>
+      <div class="lesson-preview">Bull trap: price breaks above resistance, fails to follow through, closes back below.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Bull trap: price breaks above resistance, fails to follow through, closes back below. Shorts trigger as trapped longs exit</li><li>Bear trap: breaks below support, immediately reverses — trapped shorts add fuel to the rally</li><li>Entry timing: enter when price closes back through the broken level, or on the first pullback after reversal</li><li>High probability context: failed breakouts out of trading ranges fail ~80% of the time on the first attempt</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-17">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">17</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Pullback Entries (2nd Entry)</div>
+      <div class="lesson-preview">Two-legged pullback = highest probability.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Two-legged pullback = highest probability. The market tested the pullback level twice before resuming</li><li>Entry: buy above a bull reversal bar at the end of the pullback, stop below the pullback low</li><li>Target: prior trend high, measured move, or next major resistance</li><li>Never chase: if the pullback entry bar is too large, wait for the next pullback — don't buy into strength</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-18">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">18</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Breakout Pullback Entry</div>
+      <div class="lesson-preview">Price breaks resistance → pullback to retest → continuation higher.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Pattern: price breaks resistance → pullback to retest that level (now support) → continuation higher</li><li>Entry: buy the first pullback after a genuine breakout. Stop below the new support level</li><li>Confirmation: the pullback should be orderly (bear bars are small), not panic selling</li><li>Target: measured move (height of the base projected from the breakout point)</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-19">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">19</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Trend Reversals</div>
+      <div class="lesson-preview">Step 1: break of the trend line. Step 2: lower high or higher low. Step 3: break of the most recent swing.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Step 1: break of the trend line. Necessary but not sufficient on its own</li><li>Step 2: formation of a lower high (in uptrend) or higher low (in downtrend) — the trend structure is damaged</li><li>Step 3: break below the most recent swing low (uptrend) or above swing high (downtrend)</li><li>Brooks' warning: the first reversal attempt fails ~60-70% of the time. Wait for the second signal</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-20">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">20</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Wedge Patterns</div>
+      <div class="lesson-preview">Three pushes in one direction = exhaustion.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Wedge bull flag: three lower lows, each declining less — buyers are absorbing pressure. Expect upward breakout</li><li>Wedge bear flag: three higher highs, each rising less — sellers absorbing. Expect downward breakout</li><li>Expanding wedge: each push exceeds the prior — volatile, difficult to trade. Often resolves in a range</li><li>Target after wedge: measured move back to the start of the three-push structure</li></ul>
+    
+  </div>
+</div><div class="phase-header" id="phase_4_risk_management"><h2>Phase 4: Risk Management</h2><p>Preserving capital.</p></div>
+<div class="lesson-card" id="lesson-21">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">21</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Stop Placement Rules</div>
+      <div class="lesson-preview">Default stop: 1 tick beyond the signal bar's extreme.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Default stop: 1 tick beyond the signal bar's extreme (high for shorts, low for longs)</li><li>Wider stop for context: if the setup bar is large, stop goes beyond the setup bar (not signal bar)</li><li>Never widen a stop — if price is moving toward your stop, the trade is wrong. Take the loss</li><li>Move stop to breakeven once a scalp profit is secured on part of the position</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-22">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">22</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Risk:Reward Ratios</div>
+      <div class="lesson-preview">Minimum R:R = 1:1. Ideal R:R = 2:1 or better.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Minimum R:R = 1:1. If your stop is 4 pts, your target should be at least 4 pts</li><li>Ideal R:R = 2:1 or better. Take setups where the measured move target is at least twice the stop distance</li><li>Avoid 1:2 setups — risking 4 pts to make 2 pts requires a >67% win rate just to break even</li><li>The math: 50% win rate with 1.5:1 R:R = profitable. 60% win rate with 0.8:1 R:R = unprofitable</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-23">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">23</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">Position Sizing</div>
+      <div class="lesson-preview">Risk 1-2% of account per trade.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Risk 1-2% of account per trade</li><li>$10k account = 1 MES ($100-200 risk)</li><li>$25k account = 1 ES ($250-500 risk)</li><li>$50k account = 2 ES ($500-1000 risk)</li><li>Contracts = (Account × 0.01) ÷ (Stop in pts × $50)</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-24">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">24</div>
+    <div class="lesson-meta">
+      <span class="tag tag-blue" style="margin-bottom:6px;display:inline-block;">Intermediate</span>
+      <div class="lesson-title">The Kill Switch</div>
+      <div class="lesson-preview">When down 15 pts on the day, STOP TRADING.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Daily Loss Limit: Stop trading if down 15 pts on the day. No matter what you think you see</li><li>Consecutive Losses: After 2 losing trades back-to-back, take a 60-min break before any new trade</li><li>Weekly Cap: If down 40 pts in a week, stop for the rest of that week</li><li>No revenge trading: Every trade stands alone. A loss is information — not a score to settle</li></ul>
+    
+  </div>
+</div><div class="phase-header" id="phase_5_market_conditions"><h2>Phase 5: Market Conditions</h2><p>Reading the environment.</p></div>
+<div class="lesson-card" id="lesson-25">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">25</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">VIX & Market Volatility</div>
+      <div class="lesson-preview">VIX < 14 = quiet, tight ranges. VIX > 18 = volatile, wide swings.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>VIX < 14 = quiet, tight ranges. Reduce size or sit out</li><li>VIX > 18 = volatile, wide swings. Be cautious with entries</li><li>VIX > 40 = fear mode — erratic moves, wide spreads. Sit out or cut size in half</li><li>News catalyst = wider ranges. Adjust stops and targets accordingly</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-26">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">26</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">FOMC, CPI, NFP Events</div>
+      <div class="lesson-preview">Never trade 30 minutes before/after major news releases.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Avoid 30 min before/after FOMC, CPI, NFP releases</li><li>Wide spreads on news — you will get slipped on entries and exits</li><li>Sit out and preserve capital — there are always other setups</li><li>After the initial reaction, wait for clear structure to form before trading</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-27">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">27</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Gap Analysis</div>
+      <div class="lesson-preview">Overnight gaps > 30 pts suggest trend day. Gaps < 10 pts suggest range day.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Globex gap > 30 pts = likely trend day — trade with direction</li><li>Globex gap < 10 pts = likely range day — fade extremes</li><li>Gap fill in first 30 min = bear strength (for gap ups)</li><li>Use for morning bias before the open</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-28">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">28</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Session Management</div>
+      <div class="lesson-preview">RTH = 9:30-4:00 ET. Best liquidity 9:30-12:00 and 2:00-3:30.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>RTH (Regular Trading Hours) = 9:30-4:00 ET</li><li>Best liquidity: 9:30-12:00 and 2:00-3:30</li><li>Lunch hour (12:00-2:00) = choppy, skip it</li><li>No new trades after 3:30 PM — close all positions before close</li></ul>
+    
+  </div>
+</div><div class="phase-header" id="phase_6_psychology_&_execution"><h2>Phase 6: Psychology & Execution</h2><p>The mental game.</p></div>
+<div class="lesson-card" id="lesson-29">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">29</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">The Three Disciplines</div>
+      <div class="lesson-preview">Entry, exit, and risk discipline.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Entry discipline — only take setups on your checklist. No 'gut feel' trades</li><li>Exit discipline — take profit at targets, not emotion. Don't let winners turn into losers</li><li>Risk discipline — follow position sizing rules. Never increase size after a win or decrease after a loss</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-30">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">30</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Revenge Trading</div>
+      <div class="lesson-preview">After a loss, the urge to 'make it back' is the #1 account killer.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>After loss = take break. Don't add to losers</li><li>Don't add to losers — ever. Each trade stands alone</li><li>Let next setup come naturally. The market will be there tomorrow</li><li>The urge to 'make it back' is the #1 account killer</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-31">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">31</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Overtrading</div>
+      <div class="lesson-preview">Max 4 trades/day. Quality > quantity.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Max 4 trades/day. No exceptions</li><li>Quality > quantity. Each trade must pass your checklist</li><li>If you're taking 7-8 trades, you're chasing — not trading</li><li>Fewer, higher-quality trades = better results</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-32">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">32</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Keeping a Trading Journal</div>
+      <div class="lesson-preview">Write down every trade — entry reason, exit reason, what you learned.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>Every trade logged — entry reason, exit reason, emotional state</li><li>Why you entered. Why you exited. What you'd do different</li><li>No cherry-picking. Log losses too</li><li>Review weekly. Patterns emerge that you can't see day-to-day</li></ul>
+    
+  </div>
+</div>
+<div class="lesson-card" id="lesson-33">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">33</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">Consistency Over Perfection</div>
+      <div class="lesson-preview">55% win rate with proper R:R = profitable.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>55% win rate with proper R:R = profitable</li><li>Follow the process. Results follow process</li><li>A losing trade executed correctly is a good trade</li><li>A winning trade on a bad setup is a bad trade</li></ul>
+    <blockquote class="trade-quote">Most traders lose money. The ones who win are those who accept that they will be wrong 40–50% of the time and still execute their plan without emotion.<cite>— Al Brooks</cite></blockquote>
+  </div>
+</div>
+<div class="lesson-card" id="lesson-34">
+  <div class="lesson-header" onclick="toggleLesson(this)">
+    <div class="lesson-num">34</div>
+    <div class="lesson-meta">
+      <span class="tag tag-amber" style="margin-bottom:6px;display:inline-block;">Advanced</span>
+      <div class="lesson-title">The Long Road</div>
+      <div class="lesson-preview">5 years minimum — Brooks consistently says it takes 5+ years of serious study.</div>
+    </div>
+    <svg class="accordion-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <div class="lesson-body">
+    <ul><li>5 years minimum — Brooks consistently says it takes 5+ years of serious study</li><li>Study 5,000+ charts — there is no substitute for screen time. Pattern recognition is built, not read</li><li>Start with simulation — trade in simulation for at least 6 months before risking real capital</li><li>Accept uncertainty — no setup is guaranteed. You are playing probabilities, not predicting</li></ul>
+    
+  </div>
+</div>
+      
+<div style="margin-top:56px;border-top:1px solid var(--border);padding-top:40px;">
+  <div class="section-eyebrow">Essential Reading</div>
+  <div class="section-title">The Three Books</div>
+  <p style="color:var(--text2);font-size:14px;margin-bottom:8px;">In this order.</p>
+  <div class="book-grid">
+    <div class="book-card"><div class="book-num">01</div><div class="book-phase">Start Here</div><div class="book-title">Reading Price Charts Bar by Bar</div><p style="font-size:13px;color:var(--text2);margin-top:10px;">The original. Dense and challenging but the most concentrated source of Brooks' core methodology. Covers all price action patterns, entry setups, and the bar-by-bar analysis framework.</p></div>
+    <div class="book-card"><div class="book-num">02</div><div class="book-phase">Trend Mastery</div><div class="book-title">Trading Price Action Trends</div><p style="font-size:13px;color:var(--text2);margin-top:10px;">Deep dive into trend identification, pullback entries, and how to trade with the trend. The definitive guide to reading market structure.</p></div>
+    <div class="book-card"><div class="book-num">03</div><div class="book-phase">Range Mastery</div><div class="book-title">Trading Price Action Trading Ranges</div><p style="font-size:13px;color:var(--text2);margin-top:10px;">How to identify and trade within ranges, fade extremes, and recognize when ranges break into trends. Essential for the 70% of time markets spend sideways.</p></div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white;">S</div>
+        <div style="font-weight:700;font-size:15px;">SireMammat</div>
+      </div>
+      <p>Free futures trading education built on Al Brooks price action methodology.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Education</h4>
+      <ul>
+        <li><a href="../learn/">Learn Price Action</a></li>
+<li><a href="../strategies/">Strategies</a></li>
+<li><a href="../playbooks/">Playbooks</a></li>
+<li><a href="../trading-plan/">Trading Plan</a></li>
+<li><a href="../tools/">Tools & Brokers</a></li>
+<li><a href="../calculator/">Position Calculator</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://twitter.com/SireMammat" target="_blank">X / Twitter</a></li>
+        <li><a href="https://youtube.com/@SireMammat" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Disclaimer</h4>
+      <p style="font-size:12px;color:var(--text3);line-height:1.6;">Trading involves substantial risk of loss. Past performance is not indicative of future results. All content is educational only.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sire Mammat · All rights reserved</span>
+    <span>Al Brooks Methodology · Free Education</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function toggleLesson(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.lesson-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.lesson-header svg').forEach(s => s.style.transform = '');
+  if (!isOpen) {
+    body.classList.add('open');
+    header.querySelector('svg').style.transform = 'rotate(180deg)';
+  }
+}
+</script>
+</body>
+</html>

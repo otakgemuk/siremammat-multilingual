@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools & Brokers | SireMammat</title>
+<meta name="description" content="Al Brooks price action, trading strategies, playbooks, and case studies. Trade the market, not the noise.">
+<meta name="author" content="Sire Mammat">
+<meta property="og:title" content="Tools & Brokers | SireMammat">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@SireMammat">
+<meta name="theme-color" content="#0B0F19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.tools-filter { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+.tool-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+.tool-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+.tool-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.tool-url { font-size: 12px; color: var(--text3); font-family: var(--mono); }
+.tool-rating { font-size: 18px; font-weight: 700; font-family: var(--mono); color: var(--gold); }
+.tool-desc { font-size: 14px; color: var(--text2); line-height: 1.7; margin-bottom: 16px; }
+.tool-pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.pros-cons-col h5 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.pros-col h5 { color: var(--green); }
+.cons-col h5 { color: var(--red); }
+.pros-cons-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.pros-cons-col ul li { font-size: 13px; color: var(--text2); padding-left: 16px; position: relative; }
+.pros-col ul li::before { content: '✓'; position: absolute; left: 0; color: var(--green); }
+.cons-col ul li::before { content: '✗'; position: absolute; left: 0; color: var(--red); }
+.tool-footer { display: flex; align-items: center; gap: 12px; }
+.tool-code { font-size: 12px; color: var(--text2); }
+.tool-code code { background: var(--bg3); padding: 2px 6px; border-radius: 4px; font-family: var(--mono); color: var(--accent); }
+@media(max-width:600px){ .tool-pros-cons{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker-label">DELAYED</div>
+  <div class="ticker-scroll"></div>
+</div>
+
+<nav class="main-nav">
+  <a href="../" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div><div class="nav-logo-text">SireMammat</div><div class="nav-logo-sub">Education</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../">Hub</a></li>
+    <li><a href="../#about">About</a></li>
+    <li><a href="../indicators/">Indicators</a></li>
+    <li><a href="../tools/" class="active">Tools</a></li>
+    <li><a href="../analysis/">Analysis</a></li>
+    <li><a href="../calculator/">Calculator</a></li>
+    <li><a href="../#contact">Contact</a></li>
+    <li><a href="https://wise.com/pay/me/muhammads5009?utm_source=request_flow" target="_blank" class="nav-cta">☕ Buy Me a Coffee</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" aria-label="Menu">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+
+<div class="page-header">
+  <div class="eyebrow">Recommended</div>
+  <h1>Tools &amp; Brokers</h1>
+  <p>Honest reviews of platforms, tools, and services used in daily trading. Affiliate links marked clearly.</p>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin:16px 0 0;">
+  <div class="stat-badge"><div class="val">18</div><div class="lbl">Prop Firms</div></div>
+  <div class="stat-badge"><div class="val" style="color:var(--gold);">4.6★</div><div class="lbl">Avg Rating</div></div>
+  <div class="stat-badge"><div class="val">4</div><div class="lbl">Affiliate Partners</div></div>
+</div>
+</div>
+<div class="content-wrap">
+  
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">TradingView<span class="tag tag-blue" style="margin-left:8px;">Primary</span> <span class="tag tag-gray">Charting</span></div>
+      <div class="tool-url">https://tradingview.com</div>
+    </div>
+    <div class="tool-rating">5.0 / 5.0</div>
+  </div>
+  <div class="tool-desc">Primary charting platform for all price action analysis, indicator development, and strategy scripts. Pine Script environment is where GreenLight Pro and SireTactics indicators live. Unmatched for multi-timeframe ES/NQ work.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>Best multi-timeframe layout for futures</li><li>Pine Script for custom indicators</li><li>Free tier genuinely usable</li><li>Active community and idea sharing</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>Charting only — not an execution platform</li><li>Pro plan needed for more than 3 indicators</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">No affiliate code</span>
+    <a href="https://tradingview.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">NinjaTrader<span class="tag tag-blue" style="margin-left:8px;">Primary</span> <span class="tag tag-gray">Execution</span></div>
+      <div class="tool-url">https://ninjatrader.com</div>
+    </div>
+    <div class="tool-rating">5.0 / 5.0</div>
+  </div>
+  <div class="tool-desc">Execution platform for futures. DOM trading, advanced order types, and deep market depth. The SuperDOM is unmatched for fast scalp execution on ES and NQ. Free sim trading available indefinitely.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>Best DOM for futures execution</li><li>Free sim trading indefinitely</li><li>Advanced order types and automation</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>Windows only — no native Mac</li><li>Learning curve on order entry setup</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">No affiliate code</span>
+    <a href="https://ninjatrader.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">Take Profit Trader <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://takeprofittrader.com</div>
+    </div>
+    <div class="tool-rating">4.5 / 5.0</div>
+  </div>
+  <div class="tool-desc">Day-one withdrawable profits — TPT's standout feature. 80% base split rising to 90% with PRO+. 1-step eval with trailing drawdown and 24-48hr payout processing.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>Withdraw profits from day one</li><li>Fast 24-48hr payouts</li><li>PRO+ gives 90% split</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>Base split only 80%</li><li>Trailing drawdown</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">No affiliate code</span>
+    <a href="https://takeprofittrader.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">TradeDay <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://tradeday.com</div>
+    </div>
+    <div class="tool-rating">4.5 / 5.0</div>
+  </div>
+  <div class="tool-desc">Static drawdown model, no activation fees. One of the cleanest eval structures in the industry — the drawdown never moves.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>Static trailing drawdown</li><li>No activation fee on most plans</li><li>Consistent payout history</li><li>No minimum trading days</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>Cheapest plan uses trailing drawdown</li><li>Plans priced higher than some competitors</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">Code: <code>MOT</code></span>
+    <a href="https://tradeday.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">Lucid Trading <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://lucidtrading.com</div>
+    </div>
+    <div class="tool-rating">4.5 / 5.0</div>
+  </div>
+  <div class="tool-desc">Fast payout structure via LucidFlex — 15-minute payouts are the fastest in the industry.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>15-minute payouts via LucidFlex</li><li>Regular buy-3-get-1 reset deals</li><li>Simple, clean eval rules</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>Consistency rule applies</li><li>Smaller account sizes than some competitors</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">Code: <code>MOT</code></span>
+    <a href="https://lucidtrading.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">MyFundedFutures <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://myfundedfutures.com</div>
+    </div>
+    <div class="tool-rating">4.5 / 5.0</div>
+  </div>
+  <div class="tool-desc">One of the most established prop firms in the futures space. Rapid plans offer a fast path to funded status.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>Established track record</li><li>Wide range of account sizes</li><li>Rapid eval path available</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>Rules can change — always verify current terms</li><li>Higher concentration risk if over-reliant</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">Code: <code>MOT</code></span>
+    <a href="https://myfundedfutures.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">Apex Trader Funding <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://apextraderfunding.com</div>
+    </div>
+    <div class="tool-rating">4.5 / 5.0</div>
+  </div>
+  <div class="tool-desc">$378M+ paid out to traders. One-time fees with an EOD drawdown option. Massive account size range up to $300K with 90% profit split.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>100% profit on first $25K</li><li>One-time fee structure</li><li>Accounts up to $300K</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>Trailing drawdown (not EOD on all plans)</li><li>Weekly payout cycle</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">No affiliate code</span>
+    <a href="https://apextraderfunding.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">Topstep <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://topstep.com</div>
+    </div>
+    <div class="tool-rating">4.5 / 5.0</div>
+  </div>
+  <div class="tool-desc">The original futures prop firm — Chicago since 2012. Pioneer of the funded trader model with a long track record.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>Longest track record in the industry</li><li>Strong brand recognition</li><li>90% profit split</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>8+ business day payouts</li><li>Trailing drawdown</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">No affiliate code</span>
+    <a href="https://topstep.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">Tradeify <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://tradeify.com</div>
+    </div>
+    <div class="tool-rating">5.0 / 5.0</div>
+  </div>
+  <div class="tool-desc">One-time pricing with a live reward pool. 90% profit split, daily payouts, and an instant funding option.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>One-time pricing — no recurring fees</li><li>Daily payouts</li><li>Instant funding option available</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>EOD trailing drawdown</li><li>Newer firm — shorter track record</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">No affiliate code</span>
+    <a href="https://tradeify.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">Alpha Futures <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://alphafutures.com</div>
+    </div>
+    <div class="tool-rating">5.0 / 5.0</div>
+  </div>
+  <div class="tool-desc">Highest-rated futures prop firm at 4.9★. Accounts up to $450K with 80-90% profit split. On-demand 24-48hr payouts.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>Highest rating in the industry (4.9★)</li><li>Accounts up to $450K</li><li>On-demand payouts</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>EOD trailing drawdown</li><li>80% base split (up to 90%)</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">No affiliate code</span>
+    <a href="https://alphafutures.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">Earn2Trade <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://earn2trade.com</div>
+    </div>
+    <div class="tool-rating">5.0 / 5.0</div>
+  </div>
+  <div class="tool-desc">Education-first approach since 2016. Gauntlet Mini 1-step eval with accounts up to $400K.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>Accounts up to $400K</li><li>Education-first approach</li><li>Established since 2016</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>80% profit split (lower than competitors)</li><li>Trailing drawdown</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">Code: <code>MOT</code></span>
+    <a href="https://earn2trade.com" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+<div class="tool-card">
+  <div class="tool-header">
+    <div>
+      <div class="tool-title">Phidias Propfirm <span class="tag tag-gray">Prop Firms</span></div>
+      <div class="tool-url">https://phidias.io</div>
+    </div>
+    <div class="tool-rating">4.5 / 5.0</div>
+  </div>
+  <div class="tool-desc">Cheapest entry with the widest size range. Master Plan accounts up to $1M — the largest in the industry.</div>
+  <div class="tool-pros-cons">
+    <div class="pros-cons-col pros-col"><h5>Pros</h5><ul><li>Accounts up to $1M (Master Plan)</li><li>Cheapest entry pricing</li><li>2-24hr payouts</li></ul></div>
+    <div class="pros-cons-col cons-col"><h5>Cons</h5><ul><li>80% base split (scales to 90%)</li><li>Trailing drawdown</li></ul></div>
+  </div>
+  <div class="tool-footer">
+    <span class="tool-code">No affiliate code</span>
+    <a href="https://phidias.io" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:13px;">Visit →</a>
+  </div>
+</div>
+  <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:16px 20px;margin-top:16px;">
+    <strong style="font-size:13px;color:var(--red);">⚠️ Important Disclaimer</strong>
+    <p style="font-size:13px;color:var(--text2);margin-top:6px;line-height:1.7;">Trading involves substantial risk of loss. Past performance is not indicative of future results. All content is for educational purposes only and does not constitute financial advice. Always verify current terms, conditions, and regulatory status with each platform before committing capital.</p>
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+        <div style="width:28px;height:28px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white;">S</div>
+        <div style="font-weight:700;font-size:15px;">SireMammat</div>
+      </div>
+      <p>Free futures trading education built on Al Brooks price action methodology.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Education</h4>
+      <ul>
+        <li><a href="../learn/">Learn Price Action</a></li>
+<li><a href="../strategies/">Strategies</a></li>
+<li><a href="../playbooks/">Playbooks</a></li>
+<li><a href="../trading-plan/">Trading Plan</a></li>
+<li><a href="../tools/">Tools & Brokers</a></li>
+<li><a href="../calculator/">Position Calculator</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://twitter.com/SireMammat" target="_blank">X / Twitter</a></li>
+        <li><a href="https://youtube.com/@SireMammat" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Disclaimer</h4>
+      <p style="font-size:12px;color:var(--text3);line-height:1.6;">Trading involves substantial risk of loss. Past performance is not indicative of future results. All content is educational only.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sire Mammat · All rights reserved</span>
+    <span>Al Brooks Methodology · Free Education</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>
