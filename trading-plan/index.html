@@ -79,14 +79,14 @@
 
 
 <div class="page-header">
-  <div class="eyebrow">Execution</div>
-  <h1>Trading Plan</h1>
-  <p>The complete 20-point futures day trading plan with market filters, entry rules, and performance tracking.</p>
+  <div class="eyebrow" data-i18n="plan_eyebrow">Execution</div>
+  <h1 data-i18n="plan_title">Trading Plan</h1>
+  <p data-i18n="plan_sub">The complete 20-point futures day trading plan with market filters, entry rules, and performance tracking.</p>
   <div style="display:flex;gap:16px;flex-wrap:wrap;margin:16px 0 0;">
-  <div class="stat-badge"><div class="val">20 pts</div><div class="lbl">Per Contract</div></div>
-  <div class="stat-badge"><div class="val">$1,000</div><div class="lbl">ES Daily Target</div></div>
-  <div class="stat-badge"><div class="val">2–4</div><div class="lbl">Trades/Day</div></div>
-  <div class="stat-badge"><div class="val">10 pts</div><div class="lbl">Max Loss/Trade</div></div>
+  <div class="stat-badge"><div class="val">20 pts</div><div class="lbl" data-i18n="plan_stat1">Per Contract</div></div>
+  <div class="stat-badge"><div class="val">$1,000</div><div class="lbl" data-i18n="plan_stat2">ES Daily Target</div></div>
+  <div class="stat-badge"><div class="val">2–4</div><div class="lbl" data-i18n="plan_stat3">Trades/Day</div></div>
+  <div class="stat-badge"><div class="val">10 pts</div><div class="lbl" data-i18n="plan_stat4">Max Loss/Trade</div></div>
 </div>
 </div>
 <div class="content-wrap">
@@ -351,7 +351,6 @@
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
 <script>
 function togglePlan(header) {
   const body = header.nextElementSibling;
