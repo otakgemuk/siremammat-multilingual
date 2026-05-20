@@ -44,6 +44,10 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px;
   <div class="ticker-scroll"></div>
 </div>
 
+<div class="lang-bar">
+  <span class="lang-bar-label">🌐 Language</span>
+  <div class="lang-switcher"></div>
+</div>
 <nav class="main-nav">
   <a href="../" class="nav-logo">
     <div class="nav-logo-mark">S</div>
@@ -217,5 +221,6 @@ function update() {
     `Account: $${account.toLocaleString()}<br>Risk $: $${account.toLocaleString()} × ${risk}% = $${riskDollar.toFixed(0)}<br>Per contract: ${stop} pts × $${contract.mult} = $${perContract}<br>Contracts: $${riskDollar.toFixed(0)} ÷ $${perContract} = ${contracts}`;
 }
 </script>
+<script src="../js/i18n.js"></script>
 </body>
 </html>
