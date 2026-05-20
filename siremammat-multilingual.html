@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SireMammat — Free Futures Trading Education</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #0B0F19;
+            background: #FFFFFF;
+            line-height: 1.6;
+        }
+        
+        .lang-toggle {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #F5F5F5;
+            border-bottom: 0.5px solid #E0E0E0;
+            padding: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: 0.5px solid #D0D0D0;
+            background: #FFFFFF;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn:hover {
+            background: #F5F5F5;
+        }
+        
+        .lang-btn.active {
+            background: #E8E8E8;
+            border-color: #999;
+        }
+        
+        header {
+            background: #F5F5F5;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            color: #666;
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+        
+        nav {
+            padding: 1.5rem;
+            text-align: center;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: #0B0F19;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 0.5rem 1rem;
+            border: 0.5px solid #D0D0D0;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        nav a:hover {
+            background: #F5F5F5;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            padding: 2rem 1.5rem;
+            background: #F5F5F5;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .section {
+            padding: 2rem 1.5rem;
+            border-bottom: 0.5px solid #E0E0E0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .section p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+        }
+        
+        .pillar {
+            background: #F5F5F5;
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 0.5px solid #E0E0E0;
+        }
+        
+        .pillar-num {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .pillar-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .pillar-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .hub {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        
+        .hub-card {
+            background: #FFFFFF;
+            border: 0.5px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+        
+        .hub-icon {
+            font-size: 20px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .hub-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hub-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .quote {
+            background: #F5F5F5;
+            padding: 1.5rem;
+            border-left: 4px solid #999;
+            margin: 1.5rem 0;
+            border-radius: 0;
+            font-style: italic;
+            color: #333;
+        }
+        
+        .about {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about p {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        footer {
+            background: #F5F5F5;
+            padding: 2rem 1.5rem;
+            font-size: 13px;
+            color: #999;
+            text-align: center;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        @media (max-width: 768px) {
+            .lang-toggle {
+                gap: 0.25rem;
+            }
+            
+            .lang-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 12px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .section {
+                padding: 1.5rem 1rem;
+            }
+            
+            nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">English</button>
+    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" onclick="setLang('hi')">हिन्दी</button>
+    <button class="lang-btn" onclick="setLang('es')">Español</button>
+    <button class="lang-btn" onclick="setLang('fr')">Français</button>
+    <button class="lang-btn" onclick="setLang('ar')">العربية</button>
+    <button class="lang-btn" onclick="setLang('ja')">日本語</button>
+</div>
+
+<header>
+    <div class="lang en">
+        <h1>SireMammat</h1>
+        <p class="tagline">Free futures trading education built on Al Brooks price action methodology.</p>
+    </div>
+    <div class="lang zh hidden">
+        <h1>SireMammat</h1>
+        <p class="tagline">基于Al Brooks价格行为方法的免费期货交易教育。</p>
+    </div>
+    <div class="lang hi hidden">
+        <h1>SireMammat</h1>
+        <p class="tagline">Al Brooks मूल्य कार्रवाई पद्धति पर बनी मुफ्त फ्यूचर्स ट्रेडिंग शिक्षा।</p>
+    </div>
+    <div class="lang es hidden">
+        <h1>SireMammat</h1>
+        <p class="tagline">Educación gratuita de operaciones de futuros construida sobre la metodología de acción del precio de Al Brooks.</p>
+    </div>
+    <div class="lang fr hidden">
+        <h1>SireMammat</h1>
+        <p class="tagline">Éducation gratuite au trading de contrats à terme basée sur la méthodologie d'action des prix d'Al Brooks.</p>
+    </div>
+    <div class="lang ar hidden">
+        <h1>SireMammat</h1>
+        <p class="tagline">تعليم تداول العقود الآجلة المجاني المبني على منهجية حركة السعر لـ Al Brooks.</p>
+    </div>
+    <div class="lang ja hidden">
+        <h1>SireMammat</h1>
+        <p class="tagline">Al Brooksのプライスアクション方法論に基づいた無料先物取引教育。</p>
+    </div>
+</header>
+
+<nav>
+    <a href="#" class="lang en">Hub</a>
+    <a href="#" class="lang zh hidden">首页</a>
+    <a href="#" class="lang hi hidden">हब</a>
+    <a href="#" class="lang es hidden">Centro</a>
+    <a href="#" class="lang fr hidden">Accueil</a>
+    <a href="#" class="lang ar hidden">المركز</a>
+    <a href="#" class="lang ja hidden">ハブ</a>
+    
+    <a href="#" class="lang en">About</a>
+    <a href="#" class="lang zh hidden">关于</a>
+    <a href="#" class="lang hi hidden">परिचय</a>
+    <a href="#" class="lang es hidden">Acerca de</a>
+    <a href="#" class="lang fr hidden">À propos</a>
+    <a href="#" class="lang ar hidden">حول</a>
+    <a href="#" class="lang ja hidden">について</a>
+    
+    <a href="#" class="lang en">Learn</a>
+    <a href="#" class="lang zh hidden">学习</a>
+    <a href="#" class="lang hi hidden">सीखें</a>
+    <a href="#" class="lang es hidden">Aprender</a>
+    <a href="#" class="lang fr hidden">Apprendre</a>
+    <a href="#" class="lang ar hidden">تعلم</a>
+    <a href="#" class="lang ja hidden">学ぶ</a>
+    
+    <a href="#" class="lang en">Strategies</a>
+    <a href="#" class="lang zh hidden">策略</a>
+    <a href="#" class="lang hi hidden">रणनीतियाँ</a>
+    <a href="#" class="lang es hidden">Estrategias</a>
+    <a href="#" class="lang fr hidden">Stratégies</a>
+    <a href="#" class="lang ar hidden">الاستراتيجيات</a>
+    <a href="#" class="lang ja hidden">戦略</a>
+    
+    <a href="#" class="lang en">Tools</a>
+    <a href="#" class="lang zh hidden">工具</a>
+    <a href="#" class="lang hi hidden">उपकरण</a>
+    <a href="#" class="lang es hidden">Herramientas</a>
+    <a href="#" class="lang fr hidden">Outils</a>
+    <a href="#" class="lang ar hidden">الأدوات</a>
+    <a href="#" class="lang ja hidden">ツール</a>
+</nav>
+
+<div class="stats">
+    <div class="stat">
+        <div class="stat-label lang en">Daily Target</div>
+        <div class="stat-label lang zh hidden">每日目标</div>
+        <div class="stat-label lang hi hidden">दैनिक लक्ष्य</div>
+        <div class="stat-label lang es hidden">Objetivo diario</div>
+        <div class="stat-label lang fr hidden">Objectif quotidien</div>
+        <div class="stat-label lang ar hidden">الهدف اليومي</div>
+        <div class="stat-label lang ja hidden">日次ターゲット</div>
+        <div class="stat-value">20pts</div>
+    </div>
+    <div class="stat">
+        <div class="stat-label lang en">Win Rate YTD</div>
+        <div class="stat-label lang zh hidden">年初至今胜率</div>
+        <div class="stat-label lang hi hidden">जीत दर YTD</div>
+        <div class="stat-label lang es hidden">Tasa de ganancia YTD</div>
+        <div class="stat-label lang fr hidden">Taux de victoire YTD</div>
+        <div class="stat-label lang ar hidden">معدل الفوز YTD</div>
+        <div class="stat-label lang ja hidden">勝率 YTD</div>
+        <div class="stat-value">58%</div>
+    </div>
+    <div class="stat">
+        <div class="stat-label lang en">Profit Factor</div>
+        <div class="stat-label lang zh hidden">利润因子</div>
+        <div class="stat-label lang hi hidden">लाभ कारक</div>
+        <div class="stat-label lang es hidden">Factor de ganancia</div>
+        <div class="stat-label lang fr hidden">Facteur de profit</div>
+        <div class="stat-label lang ar hidden">عامل الربح</div>
+        <div class="stat-label lang ja hidden">利益係数</div>
+        <div class="stat-value">1.8</div>
+    </div>
+    <div class="stat">
+        <div class="stat-label lang en">Instruments</div>
+        <div class="stat-label lang zh hidden">交易工具</div>
+        <div class="stat-label lang hi hidden">उपकरण</div>
+        <div class="stat-label lang es hidden">Instrumentos</div>
+        <div class="stat-label lang fr hidden">Instruments</div>
+        <div class="stat-label lang ar hidden">الأدوات</div>
+        <div class="stat-label lang ja hidden">商品</div>
+        <div class="stat-value">4</div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="lang en"><h2>The trader's core pillars</h2><p style="margin-bottom: 1.5rem; color: #666;">Your business rules, statistical edge, execution manual, and historical proof.</p></div>
+    <div class="lang zh hidden"><h2>交易者的核心支柱</h2><p style="margin-bottom: 1.5rem; color: #666;">您的商业规则、统计优势、执行手册和历史证明。</p></div>
+    <div class="lang hi hidden"><h2>व्यापारी के मूल स्तंभ</h2><p style="margin-bottom: 1.5rem; color: #666;">आपके व्यावसायिक नियम, सांख्यिकीय लाभ, निष्पादन मैनुअल और ऐतिहासिक प्रमाण।</p></div>
+    <div class="lang es hidden"><h2>Los pilares centrales del operador</h2><p style="margin-bottom: 1.5rem; color: #666;">Sus reglas comerciales, ventaja estadística, manual de ejecución y prueba histórica.</p></div>
+    <div class="lang fr hidden"><h2>Les piliers fondamentaux du trader</h2><p style="margin-bottom: 1.5rem; color: #666;">Vos règles commerciales, avantage statistique, manuel d'exécution et preuve historique.</p></div>
+    <div class="lang ar hidden"><h2>الأعمدة الأساسية للمتداول</h2><p style="margin-bottom: 1.5rem; color: #666;">قواعد عملك وميزتك الإحصائية وكتيب التنفيذ والإثبات التاريخي.</p></div>
+    <div class="lang ja hidden"><h2>トレーダーの基本的な柱</h2><p style="margin-bottom: 1.5rem; color: #666;">ビジネスルール、統計的優位性、実行マニュアル、および歴史的証拠。</p></div>
+    
+    <div class="pillars">
+        <div class="pillar">
+            <div class="pillar-num">01</div>
+            <div class="pillar-title lang en">Foundation</div>
+            <div class="pillar-title lang zh hidden">基础</div>
+            <div class="pillar-title lang hi hidden">आधार</div>
+            <div class="pillar-title lang es hidden">Fundación</div>
+            <div class="pillar-title lang fr hidden">Fondation</div>
+            <div class="pillar-title lang ar hidden">الأساس</div>
+            <div class="pillar-title lang ja hidden">基礎</div>
+            <div class="pillar-desc lang en">Trading plan, risk management, daily loss limits, and psychological guardrails.</div>
+            <div class="pillar-desc lang zh hidden">交易计划、风险管理、每日亏损限制和心理防线。</div>
+            <div class="pillar-desc lang hi hidden">व्यापार योजना, जोखिम प्रबंधन, दैनिक नुकसान सीमा और मनोवैज्ञानिक सुरक्षा।</div>
+            <div class="pillar-desc lang es hidden">Plan de operaciones, gestión de riesgos, límites de pérdidas diarias y salvaguardas psicológicas.</div>
+            <div class="pillar-desc lang fr hidden">Plan de trading, gestion des risques, limites de pertes quotidiennes et garde-fous psychologiques.</div>
+            <div class="pillar-desc lang ar hidden">خطة التداول، إدارة المخاطر، حدود الخسائر اليومية، وضمانات نفسية.</div>
+            <div class="pillar-desc lang ja hidden">取引計画、リスク管理、1日の損失制限、心理的保障。</div>
+        </div>
+        <div class="pillar">
+            <div class="pillar-num">02</div>
+            <div class="pillar-title lang en">Logic</div>
+            <div class="pillar-title lang zh hidden">逻辑</div>
+            <div class="pillar-title lang hi hidden">तर्क</div>
+            <div class="pillar-title lang es hidden">Lógica</div>
+            <div class="pillar-title lang fr hidden">Logique</div>
+            <div class="pillar-title lang ar hidden">المنطق</div>
+            <div class="pillar-title lang ja hidden">ロジック</div>
+            <div class="pillar-desc lang en">Strategies with entry triggers, stop-loss logic, and target placement.</div>
+            <div class="pillar-desc lang zh hidden">包含入场触发、止损逻辑和目标位置的策略。</div>
+            <div class="pillar-desc lang hi hidden">प्रवेश ट्रिगर, स्टॉप-लॉस तर्क और लक्ष्य प्लेसमेंट के साथ रणनीतियाँ।</div>
+            <div class="pillar-desc lang es hidden">Estrategias con disparadores de entrada, lógica de stop-loss y ubicación de objetivos.</div>
+            <div class="pillar-desc lang fr hidden">Stratégies avec déclencheurs d'entrée, logique stop-loss et placement des objectifs.</div>
+            <div class="pillar-desc lang ar hidden">استراتيجيات مع محفزات الدخول ومنطق إيقاف الخسارة وتحديد الأهداف.</div>
+            <div class="pillar-desc lang ja hidden">エントリートリガー、ストップロスロジック、ターゲット配置を備えた戦略。</div>
+        </div>
+        <div class="pillar">
+            <div class="pillar-num">03</div>
+            <div class="pillar-title lang en">Execution</div>
+            <div class="pillar-title lang zh hidden">执行</div>
+            <div class="pillar-title lang hi hidden">निष्पादन</div>
+            <div class="pillar-title lang es hidden">Ejecución</div>
+            <div class="pillar-title lang fr hidden">Exécution</div>
+            <div class="pillar-title lang ar hidden">التنفيذ</div>
+            <div class="pillar-title lang ja hidden">実行</div>
+            <div class="pillar-desc lang en">Playbook with your best-performing setups working in real conditions.</div>
+            <div class="pillar-desc lang zh hidden">包含您在真实条件下表现最佳的设置的剧本。</div>
+            <div class="pillar-desc lang hi hidden">आपके सर्वश्रेष्ठ प्रदर्शन करने वाले सेटअप के साथ वास्तविक स्थितियों में काम करने वाली प्लेबुक।</div>
+            <div class="pillar-desc lang es hidden">Manual de jugadas con sus mejores configuraciones funcionando en condiciones reales.</div>
+            <div class="pillar-desc lang fr hidden">Carnet de jeu avec vos meilleures configurations fonctionnant en conditions réelles.</div>
+            <div class="pillar-desc lang ar hidden">كتيب تشغيل مع أفضل الإعدادات التي تعمل في ظروف حقيقية.</div>
+            <div class="pillar-desc lang ja hidden">実際の条件で機能する最高のセットアップを備えたプレイブック。</div>
+        </div>
+        <div class="pillar">
+            <div class="pillar-num">04</div>
+            <div class="pillar-title lang en">Forensics</div>
+            <div class="pillar-title lang zh hidden">法证</div>
+            <div class="pillar-title lang hi hidden">फोरेंसिक्स</div>
+            <div class="pillar-title lang es hidden">Análisis forense</div>
+            <div class="pillar-title lang fr hidden">Analyse médico-légale</div>
+            <div class="pillar-title lang ar hidden">الطب الشرعي</div>
+            <div class="pillar-title lang ja hidden">法医学</div>
+            <div class="pillar-desc lang en">Deep-dive case studies of past sessions with lessons and confidence.</div>
+            <div class="pillar-desc lang zh hidden">深入分析过去交易的案例研究，获得教训和信心。</div>
+            <div class="pillar-desc lang hi hidden">पिछले सत्रों के गहन केस स्टडी जिनसे सबक और आत्मविश्वास मिले।</div>
+            <div class="pillar-desc lang es hidden">Estudios de casos profundos de sesiones pasadas con lecciones y confianza.</div>
+            <div class="pillar-desc lang fr hidden">Études de cas approfondies des sessions passées avec leçons et confiance.</div>
+            <div class="pillar-desc lang ar hidden">دراسات حالة متعمقة للجلسات الماضية مع الدروس والثقة.</div>
+            <div class="pillar-desc lang ja hidden">過去のセッションの詳細なケーススタディと教訓と自信。</div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="lang en"><h2>Content hub</h2><p style="margin-bottom: 1.5rem; color: #666;">Everything in one place — every resource, strategy, and analysis organized.</p></div>
+    <div class="lang zh hidden"><h2>内容中心</h2><p style="margin-bottom: 1.5rem; color: #666;">一站式获取所有资源、策略和分析。</p></div>
+    <div class="lang hi hidden"><h2>सामग्री हब</h2><p style="margin-bottom: 1.5rem; color: #666;">सभी संसाधन, रणनीति और विश्लेषण एक जगह पर संगठित।</p></div>
+    <div class="lang es hidden"><h2>Centro de contenidos</h2><p style="margin-bottom: 1.5rem; color: #666;">Todo en un solo lugar — cada recurso, estrategia y análisis organizado.</p></div>
+    <div class="lang fr hidden"><h2>Centre de contenu</h2><p style="margin-bottom: 1.5rem; color: #666;">Tout en un seul endroit — chaque ressource, stratégie et analyse organisée.</p></div>
+    <div class="lang ar hidden"><h2>مركز المحتوى</h2><p style="margin-bottom: 1.5rem; color: #666;">كل شيء في مكان واحد — كل مورد واستراتيجية وتحليل منظم.</p></div>
+    <div class="lang ja hidden"><h2>コンテンツハブ</h2><p style="margin-bottom: 1.5rem; color: #666;">すべてが1か所に — すべてのリソース、戦略、分析が整理されています。</p></div>
+    
+    <div class="hub">
+        <div class="hub-card">
+            <div class="hub-icon">📚</div>
+            <div class="hub-title lang en">Education</div>
+            <div class="hub-title lang zh hidden">教育</div>
+            <div class="hub-title lang hi hidden">शिक्षा</div>
+            <div class="hub-title lang es hidden">Educación</div>
+            <div class="hub-title lang fr hidden">Éducation</div>
+            <div class="hub-title lang ar hidden">التعليم</div>
+            <div class="hub-title lang ja hidden">教育</div>
+            <div class="hub-desc lang en">Structured curriculum covering Al Brooks methodology and price action.</div>
+            <div class="hub-desc lang zh hidden">涵盖Al Brooks方法和价格行为的结构化课程。</div>
+            <div class="hub-desc lang hi hidden">Al Brooks पद्धति और मूल्य कार्रवाई को कवर करने वाला संरचित पाठ्यक्रम।</div>
+            <div class="hub-desc lang es hidden">Currículo estructurado que cubre la metodología de Al Brooks y la acción del precio.</div>
+            <div class="hub-desc lang fr hidden">Curriculum structuré couvrant la méthodologie d'Al Brooks et l'action des prix.</div>
+            <div class="hub-desc lang ar hidden">منهج منظم يغطي منهجية Al Brooks وحركة السعر.</div>
+            <div class="hub-desc lang ja hidden">Al Brooksの方法論とプライスアクションを扱う構造化カリキュラム。</div>
+        </div>
+        <div class="hub-card">
+            <div class="hub-icon">📋</div>
+            <div class="hub-title lang en">Trading Plan</div>
+            <div class="hub-title lang zh hidden">交易计划</div>
+            <div class="hub-title lang hi hidden">व्यापार योजना</div>
+            <div class="hub-title lang es hidden">Plan de operaciones</div>
+            <div class="hub-title lang fr hidden">Plan de trading</div>
+            <div class="hub-title lang ar hidden">خطة التداول</div>
+            <div class="hub-title lang ja hidden">取引計画</div>
+            <div class="hub-desc lang en">Complete 20-point futures day trading plan with rules and tracking.</div>
+            <div class="hub-desc lang zh hidden">完整的20点期货日交易计划，含规则和追踪。</div>
+            <div class="hub-desc lang hi hidden">नियमों और ट्रैकिंग के साथ संपूर्ण 20-बिंदु फ्यूचर्स दिवसीय ट्रेडिंग योजना।</div>
+            <div class="hub-desc lang es hidden">Plan completo de operaciones diarias de futuros de 20 puntos con reglas y seguimiento.</div>
+            <div class="hub-desc lang fr hidden">Plan complet de trading journalier de contrats à terme de 20 points avec règles et suivi.</div>
+            <div class="hub-desc lang ar hidden">خطة تداول يومية كاملة للعقود الآجلة من 20 نقطة مع القواعس والتتبع.</div>
+            <div class="hub-desc lang ja hidden">ルールと追跡を備えた完全な20ポイント先物日中取引計画。</div>
+        </div>
+        <div class="hub-card">
+            <div class="hub-icon">🎯</div>
+            <div class="hub-title lang en">Strategies</div>
+            <div class="hub-title lang zh hidden">策略</div>
+            <div class="hub-title lang hi hidden">रणनीतियाँ</div>
+            <div class="hub-title lang es hidden">Estrategias</div>
+            <div class="hub-title lang fr hidden">Stratégies</div>
+            <div class="hub-title lang ar hidden">الاستراتيجيات</div>
+            <div class="hub-title lang ja hidden">戦略</div>
+            <div class="hub-desc lang en">Documented trading strategies with entry rules, stops, and targets.</div>
+            <div class="hub-desc lang zh hidden">有详细说明的交易策略，含入场规则、止损和目标。</div>
+            <div class="hub-desc lang hi hidden">प्रवेश नियमों, स्टॉप और लक्ष्यों के साथ प्रलेखित व्यापार रणनीतियाँ।</div>
+            <div class="hub-desc lang es hidden">Estrategias comerciales documentadas con reglas de entrada, paradas y objetivos.</div>
+            <div class="hub-desc lang fr hidden">Stratégies commerciales documentées avec règles d'entrée, arrêts et objectifs.</div>
+            <div class="hub-desc lang ar hidden">استراتيجيات التداول الموثقة مع قواعد الدخول والإيقاف والأهداف.</div>
+            <div class="hub-desc lang ja hidden">エントリールール、ストップ、ターゲットを備えた文書化された取引戦略。</div>
+        </div>
+        <div class="hub-card">
+            <div class="hub-icon">📊</div>
+            <div class="hub-title lang en">Playbooks</div>
+            <div class="hub-title lang zh hidden">剧本</div>
+            <div class="hub-title lang hi hidden">खेल पुस्तिकाएं</div>
+            <div class="hub-title lang es hidden">Manuales de jugadas</div>
+            <div class="hub-title lang fr hidden">Carnets de jeu</div>
+            <div class="hub-title lang ar hidden">كتيبات التشغيل</div>
+            <div class="hub-title lang ja hidden">プレイブック</div>
+            <div class="hub-desc lang en">Complete trading systems broken into individual slides with context.</div>
+            <div class="hub-desc lang zh hidden">完整交易系统分解为单个幻灯片，附带背景信息。</div>
+            <div class="hub-desc lang hi hidden">संदर्भ के साथ व्यक्तिगत स्लाइडों में विभाजित पूर्ण व्यापार प्रणाली।</div>
+            <div class="hub-desc lang es hidden">Sistemas comerciales completos divididos en diapositivas individuales con contexto.</div>
+            <div class="hub-desc lang fr hidden">Systèmes commerciaux complets divisés en diapositives individuelles avec contexte.</div>
+            <div class="hub-desc lang ar hidden">أنظمة تداول كاملة مقسمة إلى شرائح فردية مع السياق.</div>
+            <div class="hub-desc lang ja hidden">コンテキスト付きの個別スライドに分割された完全な取引システム。</div>
+        </div>
+        <div class="hub-card">
+            <div class="hub-icon">🔍</div>
+            <div class="hub-title lang en">Case Studies</div>
+            <div class="hub-title lang zh hidden">案例研究</div>
+            <div class="hub-title lang hi hidden">केस स्टडीज</div>
+            <div class="hub-title lang es hidden">Estudios de caso</div>
+            <div class="hub-title lang fr hidden">Études de cas</div>
+            <div class="hub-title lang ar hidden">دراسات الحالة</div>
+            <div class="hub-title lang ja hidden">ケーススタディ</div>
+            <div class="hub-desc lang en">Deep-dive breakdowns of real trades with annotated charts.</div>
+            <div class="hub-desc lang zh hidden">真实交易的深入分析，附带注释图表。</div>
+            <div class="hub-desc lang hi hidden">व्याख्यात्मक चार्ट के साथ वास्तविक ट्रेडों का गहन विश्लेषण।</div>
+            <div class="hub-desc lang es hidden">Análisis profundos de operaciones reales con gráficos anotados.</div>
+            <div class="hub-desc lang fr hidden">Analyses approfondies des transactions réelles avec graphiques annotés.</div>
+            <div class="hub-desc lang ar hidden">تحليلات متعمقة للتداولات الحقيقية مع الرسوم البيانية المشروحة.</div>
+            <div class="hub-desc lang ja hidden">注釈付きチャートを使用した実際の取引の詳細な分析。</div>
+        </div>
+        <div class="hub-card">
+            <div class="hub-icon">🧮</div>
+            <div class="hub-title lang en">Calculator</div>
+            <div class="hub-title lang zh hidden">计算器</div>
+            <div class="hub-title lang hi hidden">कैलकुलेटर</div>
+            <div class="hub-title lang es hidden">Calculadora</div>
+            <div class="hub-title lang fr hidden">Calculatrice</div>
+            <div class="hub-title lang ar hidden">حاسبة</div>
+            <div class="hub-title lang ja hidden">計算機</div>
+            <div class="hub-desc lang en">Calculate optimal contract size based on your account and risk.</div>
+            <div class="hub-desc lang zh hidden">根据您的账户和风险计算最佳合约规模。</div>
+            <div class="hub-desc lang hi hidden">अपने खाते और जोखिम के आधार पर इष्टतम अनुबंध आकार की गणना करें।</div>
+            <div class="hub-desc lang es hidden">Calcule el tamaño de contrato óptimo según su cuenta y riesgo.</div>
+            <div class="hub-desc lang fr hidden">Calculez la taille optimale du contrat en fonction de votre compte et votre risque.</div>
+            <div class="hub-desc lang ar hidden">احسب حجم العقد الأمثل بناءً على حسابك والمخاطر.</div>
+            <div class="hub-desc lang ja hidden">アカウントとリスクに基づいて最適な契約サイズを計算します。</div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="quote">
+        <div class="lang en">"The market rewards patience, punishes impulse, and respects only those who respect process above profit." — Sire Mammat</div>
+        <div class="lang zh hidden">"市场奖励耐心，惩罚冲动，只尊重那些尊重过程胜于利润的人。" — Sire Mammat</div>
+        <div class="lang hi hidden">"बाजार धैर्य को पुरस्कृत करता है, आवेग को दंडित करता है, और केवल उन लोगों का सम्मान करता है जो लाभ से अधिक प्रक्रिया का सम्मान करते हैं।" — Sire Mammat</div>
+        <div class="lang es hidden">"El mercado recompensa la paciencia, castiga el impulso y respeta solo a aquellos que respetan el proceso por encima del beneficio." — Sire Mammat</div>
+        <div class="lang fr hidden">"Le marché récompense la patience, punit l'impulsion et ne respecte que ceux qui respectent le processus plus que le profit." — Sire Mammat</div>
+        <div class="lang ar hidden">"السوق يكافئ الصبر، يعاقب الاندفاع، ويحترم فقط أولئك الذين يحترمون العملية أكثر من الربح." — Sire Mammat</div>
+        <div class="lang ja hidden">"市場は忍耐力に報い、衝動を罰し、利益よりもプロセスを尊重する人だけを尊重します。" — Sire Mammat</div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="lang en"><h2>About</h2></div>
+    <div class="lang zh hidden"><h2>关于</h2></div>
+    <div class="lang hi hidden"><h2>परिचय</h2></div>
+    <div class="lang es hidden"><h2>Acerca de</h2></div>
+    <div class="lang fr hidden"><h2>À propos</h2></div>
+    <div class="lang ar hidden"><h2>حول</h2></div>
+    <div class="lang ja hidden"><h2>について</h2></div>
+    
+    <div class="about">
+        <div class="lang en">
+            <p>I trade futures — primarily ES, NQ, MES, and MNQ — using a price action approach built on years of study, screen time, and the kind of losses that teach more than wins ever could.</p>
+            <p>My approach is rooted in Al Brooks' price action methodology combined with volume profile analysis and disciplined session-based execution. I document everything — not to look good, but because the discipline of logging forces honesty.</p>
+            <p>This site is my public trading journal, education hub, and resource library. If you're serious about learning to trade futures properly, everything here is built to help you cut years off the learning curve — and it's free, always.</p>
+        </div>
+        <div class="lang zh hidden">
+            <p>我交易期货——主要是ES、NQ、MES和MNQ——使用基于多年研究、屏幕时间和具有教育意义的亏损的价格行为方法。</p>
+            <p>我的方法植根于Al Brooks的价格行为方法，结合了成交量分析和纪律严明的基于交易时段的执行。我记录一切——不是为了看起来好，而是因为记录的纪律强制诚实。</p>
+            <p>这个网站是我的公开交易日志、教育中心和资源库。如果您认真想学习如何正确交易期货，这里的一切都旨在帮助您缩短学习曲线——而且永远免费。</p>
+        </div>
+        <div class="lang hi hidden">
+            <p>मैं फ्यूचर्स में व्यापार करता हूँ — मुख्य रूप से ES, NQ, MES, और MNQ — एक मूल्य कार्रवाई दृष्टिकोण का उपयोग करते हुए जो वर्षों के अध्ययन, स्क्रीन समय, और उस तरह के नुकसान पर आधारित है जो जीत से अधिक सिखाता है।</p>
+            <p>मेरा दृष्टिकोण Al Brooks की मूल्य कार्रवाई पद्धति पर निहित है जिसे मात्रा प्रोफाइल विश्लेषण और अनुशासित सत्र-आधारित निष्पादन के साथ जोड़ा गया है। मैं सब कुछ दस्तावेज़ित करता हूँ — अच्छा दिखने के लिए नहीं, बल्कि क्योंकि लॉगिंग का अनुशासन ईमानदारी को बाध्य करता है।</p>
+            <p>यह साइट मेरी सार्वजनिक ट्रेडिंग जर्नल, शिक्षा केंद्र, और संसाधन पुस्तकालय है। यदि आप फ्यूचर्स का सही तरीके से व्यापार करना सीखने के बारे में गंभीर हैं, तो यहाँ सब कुछ आपको सीखने की प्रक्रिया से वर्षों को काटने में मदद करने के लिए बनाया गया है — और यह हमेशा मुफ्त है।</p>
+        </div>
+        <div class="lang es hidden">
+            <p>Opero futuros — principalmente ES, NQ, MES y MNQ — utilizando un enfoque de acción del precio construido sobre años de estudio, tiempo de pantalla y el tipo de pérdidas que enseñan más que las ganancias jamás podrían.</p>
+            <p>Mi enfoque se basa en la metodología de acción del precio de Al Brooks combinada con análisis de perfil de volumen y ejecución disciplinada basada en sesiones. Documento todo — no para verme bien, sino porque la disciplina del registro obliga a la honestidad.</p>
+            <p>Este sitio es mi diario de operaciones público, centro educativo y biblioteca de recursos. Si habla en serio sobre aprender a operar futuros correctamente, todo aquí está construido para ayudarlo a acortar la curva de aprendizaje en años — y es gratis, siempre.</p>
+        </div>
+        <div class="lang fr hidden">
+            <p>Je négocie des contrats à terme — principalement ES, NQ, MES et MNQ — en utilisant une approche d'action des prix construite sur des années d'étude, de temps d'écran et du type de pertes qui enseignent plus que les gains ne pourraient jamais le faire.</p>
+            <p>Mon approche est enracinée dans la méthodologie d'action des prix d'Al Brooks combinée à l'analyse des profils de volume et à l'exécution disciplinée basée sur les sessions. Je documente tout — non pas pour faire bonne impression, mais parce que la discipline de la tenue de dossier force l'honnêteté.</p>
+            <p>Ce site est mon journal de trading public, mon centre éducatif et ma bibliothèque de ressources. Si vous êtes sérieux sur l'apprentissage du trading correct de contrats à terme, tout ici est construit pour vous aider à réduire la courbe d'apprentissage de plusieurs années — et c'est gratuit, toujours.</p>
+        </div>
+        <div class="lang ar hidden">
+            <p>أنا أتاجر في العقود الآجلة — بشكل أساسي ES و NQ و MES و MNQ — باستخدام نهج حركة السعر المبني على سنوات من الدراسة ووقت الشاشة وذلك النوع من الخسائر التي تعلم أكثر مما يمكن للفوز أن يعلمه.</p>
+            <p>يتجذر نهجي في منهجية حركة السعر لـ Al Brooks مع تحليل ملف السعة والتنفيذ المنضبط القائم على الجلسات. أوثق كل شيء — ليس لأبدو بشكل جيد، بل لأن انضباط الحفظ يفرض الصدق.</p>
+            <p>هذا الموقع هو دفتر يومياتي العام للتداول ومركز التعليم ومكتبة موارده. إذا كنت جادًا بشأن تعلم التداول الصحيح للعقود الآجلة، فإن كل شيء هنا مصمم لمساعدتك في تقصير منحنى التعلم — وهو مجاني دائمًا.</p>
+        </div>
+        <div class="lang ja hidden">
+            <p>私は先物を取引しています — 主にES、NQ、MES、MNQ — 何年もの研究、画面時間、そして勝ちよりも多く教えるような損失に基づいて構築されたプライスアクション戦略を使用しています。</p>
+            <p>私のアプローチはAl Brooksのプライスアクション方法論に基づいており、ボリュームプロファイル分析と厳密なセッションベースの実行と組み合わされています。私はすべてを文書化します — 良く見えるためではなく、ログの規律が正直さを強制するためです。</p>
+            <p>このサイトは私の公開取引ジャーナル、教育ハブ、およびリソースライブラリです。先物の正しい取引方法を真剣に学びたい場合は、ここのすべてが学習曲線を短縮するために構築されています — そして、それは常に無料です。</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="lang en">
+        <p>© 2026 Sire Mammat · All rights reserved</p>
+        <p style="margin-top: 1rem;">Built with price action. Zero noise.</p>
+    </div>
+    <div class="lang zh hidden">
+        <p>© 2026 Sire Mammat · 版权所有</p>
+        <p style="margin-top: 1rem;">用价格行为构建。零噪音。</p>
+    </div>
+    <div class="lang hi hidden">
+        <p>© 2026 Sire Mammat · सर्वाधिकार सुरक्षित</p>
+        <p style="margin-top: 1rem;">मूल्य कार्रवाई के साथ निर्मित। शून्य शोर।</p>
+    </div>
+    <div class="lang es hidden">
+        <p>© 2026 Sire Mammat · Todos los derechos reservados</p>
+        <p style="margin-top: 1rem;">Construido con acción del precio. Cero ruido.</p>
+    </div>
+    <div class="lang fr hidden">
+        <p>© 2026 Sire Mammat · Tous droits réservés</p>
+        <p style="margin-top: 1rem;">Construit avec l'action des prix. Zéro bruit.</p>
+    </div>
+    <div class="lang ar hidden">
+        <p>© 2026 Sire Mammat · جميع الحقوق محفوظة</p>
+        <p style="margin-top: 1rem;">بني مع حركة السعر. لا ضوضاء.</p>
+    </div>
+    <div class="lang ja hidden">
+        <p>© 2026 Sire Mammat · 著作権所有</p>
+        <p style="margin-top: 1rem;">プライスアクションで構築。ノイズなし。</p>
+    </div>
+</footer>
+
+<script>
+function setLang(lang) {
+    const elements = document.querySelectorAll('.lang');
+    const buttons = document.querySelectorAll('.lang-btn');
+    
+    buttons.forEach(btn => btn.classList.remove('active'));
+    elements.forEach(el => {
+        if (el.classList.contains(lang)) {
+            el.classList.remove('hidden');
+        } else {
+            el.classList.add('hidden');
+        }
+    });
+    
+    const langMap = { en: 0, zh: 1, hi: 2, es: 3, fr: 4, ar: 5, ja: 6 };
+    buttons[langMap[lang]].classList.add('active');
+    
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    
+    localStorage.setItem('siremammat-lang', lang);
+}
+
+window.addEventListener('load', () => {
+    const savedLang = localStorage.getItem('siremammat-lang') || 'en';
+    setLang(savedLang);
+});
+</script>
+
+</body>
+</html>
